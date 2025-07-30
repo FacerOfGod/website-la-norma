@@ -120,3 +120,21 @@
   object-fit: cover;
   flex-shrink: 0;
 }
+
+
+.notification-content ul {
+  list-style: none; /* remove all bullets */
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+/* Add dash marker only for first-level li */
+.notification-content > ul > li::marker {
+  content: "- ";
+  color: inherit;
+}
+/* Remove bullets for nested lists (second-level and deeper) */
+.notification-content ul ul {
+  list-style: "- "; /* no bullets */
+  padding-left: 1rem; /* indent but no bullets */
+}

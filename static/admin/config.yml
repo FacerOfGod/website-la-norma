@@ -94,10 +94,10 @@ collections:
                 hint: "Choisissez la catégorie pour distinguer visuellement le message."
               - { label: Contenu, name: content, widget: markdown, required: true, hint: "Message détaillé de la notification" }
 
-          - { label: Image, name: image, widget: image, hint: "Téléchargez une image principale représentant l’activité.", media_folder: "/static/images/activities/{{fields.activity.name}}",
-                public_folder: "/images/activities/{{fields.activity.name}}"  }
-          - { label: Logo, name: logo, widget: image, hint: "Téléchargez un logo lié à l’activité.", media_folder: "/static/images/activities/{{fields.activity.name}}",
-                public_folder: "/images/activities/{{fields.activity.name}}"  }
+          - { label: Image, name: image, widget: image, hint: "Téléchargez une image principale représentant l’activité.", media_folder: "static/images/activities/{{fields.activity.name}}",
+                public_folder: "images/activities/{{fields.activity.name}}"  }
+          - { label: Logo, name: logo, widget: image, hint: "Téléchargez un logo lié à l’activité.", media_folder: "static/images/activities/{{fields.activity.name}}",
+                public_folder: "images/activities/{{fields.activity.name}}"  }
 
           - label: Gallery Images
             name: gallery

@@ -23,10 +23,10 @@
   <div
     class="relative bg-white rounded-xl p-8 h-[400px] flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
   >
-    <h4 class="text-2xl font-semibold mb-3 text-center text-text-light">{{ .name }}</h4>
+    <h4 class="text-2xl font-semibold mb-3 text-center text-text-light">{{ .name | markdownify }}</h4>
 
     <p class="mb-6 text-gray-700">
-      {{ .description | truncate 200 | safeHTML }}
+      {{ .description | truncate 200 | safeHTML | markdownify }}
     </p>
 
     <span class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-lg hover:bg-light transition ">
