@@ -20,7 +20,7 @@
             <small>{{ .Params.info | markdownify }}</small>
           </td>
           <td class="p-2 border-b text-right align-middle min-w-[8rem]">
-            $<span class="ticket-price">{{ .Params.price }}</span>
+            €<span class="ticket-price">{{ .Params.price }}</span>
           </td>
           <td class="p-2 border-b text-right align-middle min-w-[10rem]">
             <input 
@@ -38,7 +38,7 @@
       <tfoot>
         <tr>
           <td class="p-2 border-t font-bold text-right" colspan="2">Group Total:</td>
-          <td class="p-2 border-t text-right font-bold">€<span class="group-total">0.00</span></td>
+          <td class="p-2 border-t text-right font-bold"><span class="group-total">0.00 €</span></td>
         </tr>
       </tfoot>
     </table>
@@ -46,7 +46,7 @@
 
   <!-- Overall Total and Checkout -->
   <div class="flex justify-end items-center mt-6 gap-4">
-    <div class="text-lg font-bold">Total: €<span id="total-sum">0.00</span></div>
+    <div class="text-lg font-bold">Total: <span id="total-sum">0.00 €</span></div>
     <button 
       type="submit"
       class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -81,6 +81,6 @@
   // Prevent form submission for now
   document.getElementById('ticketForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Proceeding to checkout with total: $' + document.getElementById('total-sum').textContent);
+    alert('Proceeding to checkout with total: ' + document.getElementById('total-sum').textContent + ' €');
   });
 </script>

@@ -153,11 +153,11 @@
                 {{ range $filtered }}
                   <tr>
                     <td class="p-2 border-b">
-                      <strong>{{ .Title }}</strong><br />
-                      <small>{{ .Params.info }}</small>
+                      <strong>{{ .Title  | markdownify }}</strong><br />
+                      <small>{{ .Params.info  | markdownify }}</small>
                     </td>
                     <td class="p-2 border-b text-right">
-                      ${{ .Params.price }}
+                      {{ .Params.price }} €
                     </td>
                   </tr>
                 {{ end }}
