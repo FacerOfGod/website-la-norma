@@ -1,7 +1,7 @@
 ---
-title: Groupe de 2 Personnes
-id: nz2
-group: Norma Zen
-price: 60
-info: Règlement sur place.  ⚠️**LE PRIX EST PAR PERSONNE**
+title: Group of 2 People  
+id: nz2  
+group: Norma Zen  
+price: 60  
+info: Payment on site. ⚠️ **THE PRICE IS PER PERSON**  
 ---
