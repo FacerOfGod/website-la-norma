@@ -46,12 +46,12 @@ activity:
     latitude: 45.2011768133446
     longitude: 6.696381917465995
     zoom: 15
-  logo: images/activities/norma-kids/norma-kids-logo.png
+  logo: /images/activities/norma-kids/norma-kids-logo.png
   name: Norma Kids
   contact_form_action: none
   gallery:
     - image: /images/activities/norma-kids/norma-kids-gallery/no-search-found.png
-  image: images/activities/norma-kids/norma-kids-1.jpg
+  image: /images/activities/norma-kids/norma-kids-1.jpg
   description: Welcome to Norma Kids, the ultimate mountain playground where
     curiosity meets adventure! Specially designed for children aged 3 to 12,
     Norma Kids transforms the magic of the Alps into a wonderland of laughter,

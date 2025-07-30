@@ -36,6 +36,6 @@ activity:
           hours: 11:15 - 18:30
         - day: Dimanche
           hours: 11:15 - 18:30
-  logo: images/activities/norma-o/norma-zen-logo.png
-  image: images/activities/norma-o/plan-eau.jpg
+  logo: /images/activities/norma-o/norma-zen-logo.png
+  image: /images/activities/norma-o/plan-eau.jpg
 ---

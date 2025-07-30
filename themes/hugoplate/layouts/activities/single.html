@@ -27,7 +27,12 @@
             <div
               class=" border-[4px] border-[#8b5e3c] text-black rounded-4xl p-8.5 shadow-lg backdrop-blur-md object-contain">
               <div class="col-12 mb-6 ">
-                {{ partial "image" (dict "Src" .logo "Alt" "Logo" "Loading" "eager" "Class" "mx-auto lg:w-[300px]" "DisplayXL" "500x") }}
+
+                <!-- WEIRD TEMP FIX FOR IMAGE URL TO SOLVE IN ANOTHER WAY LATER -->
+                {{ $logoStr := .logo }}
+                {{ $logo := printf "%s" (substr $logoStr 1) }}
+
+                {{ partial "image" (dict "Src" $logo "Alt" "Logo" "Loading" "eager" "Class" "mx-auto lg:w-[300px]" "DisplayXL" "500x") }}
               </div>
 
               {{ with .button }}

@@ -18,7 +18,7 @@ activity:
     latitude: 45.2011768133446
     longitude: 6.696381917465995
     zoom: 15
-  logo: images/activities/norma-loops/norma-loops-logo.png
+  logo: /images/activities/norma-loops/norma-loops-logo.png
   name: Norma Loops
   contact_form_action: none
   gallery:

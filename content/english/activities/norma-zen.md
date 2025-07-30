@@ -80,7 +80,7 @@ activity:
           hours: 2:00 PM – 7:00 PM
         - day: Sunday
           hours: 2:00 PM – 7:00 PM
-  image: images/activities/norma-zen/spa-image.jpg
-  logo: images/activities/norma-zen/norma-zen-logo.png
+  image: /images/activities/norma-zen/spa-image.jpg
+  logo: /images/activities/norma-zen/norma-zen-logo.png
 
 ---
