@@ -3,58 +3,92 @@ activity:
   gallery-image:
     - test.jpg
   horaire:
-    - window: 27.05.2025 - 19.06.2025
+    - window: Summer
       entries:
-        - day: Monday
-          hours: 10:00 - 18:00
-        - day: Tuesday
-          hours: 11:00 - 17:00
-    - window: 27.06.2025 - 18.07.2025
+        - day: Lundi
+          hours: 8:30 - 17:00
+        - day: Mardi
+          hours: 8:30 - 17:00
+        - day: Mercredi
+          hours: 8:30 - 17:00
+        - day: Jeudi
+          hours: 8:30 - 17:00
+        - day: Vendredi
+          hours: 8:30 - 17:00
+    - window: Winter
       entries:
-        - day: Monday
-          hours: 10:00 - 18:00
-        - day: Tuesday
-          hours: 11:00 - 17:00
-    - window: 27.07.2025 - 18.08.2025
-      entries:
-        - day: Monday
-          hours: 10:00 - 18:00
-    - window: 19.09.2025 - 18.09.2025
-      entries:
-        - day: Monday
-          hours: 12:00 - 20:00
-        - day: Tuesday
-          hours: 10:00 - 16:00
+        - day: Lundi
+          hours: 9:00 - 17:00
+        - day: Mardi
+          hours: 9:00 - 17:00
+        - day: Mercredi
+          hours: 9:00 - 17:00
+        - day: Jeudi
+          hours: 9:00 - 17:00
+        - day: Vendredi
+          hours: 9:00 - 17:00
   notifications:
-    - title: Attention
+    - title: "What parents need to plan for:"
       type: attention
-      content: Please arrive **15 minutes early**.
-    - title: Remarks
-      type: remark
-      content: This activity may be rescheduled in case of bad weather.
-    - title: Warning
-      type: warning
-      content: This activity may be rescheduled in case of bad weather.
-    - title: Success
-      type: success
-      content: This activity may be rescheduled in case of bad weather.
-    - title: Info
-      type: info
-      content: This activity may be rescheduled in case of bad weather.
+      content: >-
+        * Picnic and snacks (Note: during winter afternoon snacks are provided)
+
+        * Diapers, wipes or cotton pads, change of clothes
+
+        * Comfortable shoes depending on the activity
+
+          *Norma Kids does not provide anything, except drinking water (tap water).*
   openstreet_map:
     enable: true
-    latitude: 45.2011768133446
-    longitude: 6.696381917465995
+    latitude: 45.200866
+    longitude: 6.696278
     zoom: 15
   logo: /images/activities/norma-kids/norma-kids-logo.png
   name: Norma Kids
   contact_form_action: none
-  gallery:
-    - image: /images/activities/norma-kids/norma-kids-gallery/no-search-found.png
+  gallery: []
   image: /images/activities/norma-kids/norma-kids-1.jpg
-  description: Welcome to Norma Kids, the ultimate mountain playground where
-    curiosity meets adventure! Specially designed for children aged 3 to 12,
-    Norma Kids transforms the magic of the Alps into a wonderland of laughter,
-    exploration, and snowy (or sunny!) surprises.test this is tes
+  description: >-
+    At NormaKids, we do everything we can to offer families a high-quality
+    childcare service that is safe and attentive to the needs of each child.
+    Whether during school holidays or outside of them, our facility is open all
+    year round to support children of all ages in a warm, stimulating, and
+    reassuring environment.
 
+
+    Designed to adapt to each child's pace, NormaKids offers a variety of fun and educational activities, divided into age groups to ensure that each child has an enriching experience tailored to their development. Outdoor games, creative workshops, sensory discoveries, sports activities, and quiet time: each day is carefully organized to combine fun, learning, and well-being.
+
+
+    Our teams are made up of qualified professionals who are passionate about the world of childhood and trained to support each child with kindness, attention, and respect. Their mission: to provide a structured and fulfilling environment that is conducive to discovery, socialization, and independence.
+
+
+    Whether in summer or winter, for a full day or half day, NormaKids is there to simplify parents' daily lives while ensuring children have unforgettable memories. Because their well-being is our priority, you can entrust your children to us with complete peace of mind!
+
+
+
+
+    **☀️Summer**
+
+
+    * *Children aged 3 to 12*
+
+    * *16 places for children under 6*
+
+    * *36 places for children aged 6 and over*
+
+    * *🍴 Meal times only if the child stays for the whole day*
+
+
+
+    **❄️Winter**
+
+
+    * *Care for children aged 3 months to 5 years*
+
+    * *Micro-nursery with 12 places*
+
+    * Meal times only:
+
+      * During school holidays: every day
+      * Outside of holidays: Tuesdays and Thursdays only
 ---
