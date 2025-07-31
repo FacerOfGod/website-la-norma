@@ -44,6 +44,33 @@ activity:
         * Registration form to be completed (including health form)
         * Photocopy of vaccinations
         * Photocopy of the child's identity card or family record book
+    - type: info
+      title: "☀️ Summer:"
+      content: |-
+        
+
+
+        * *Children aged 3 to 12*
+
+        * *16 places for children under 6*
+
+        * *36 places for children aged 6 and over*
+
+        * *🍴 Meal times only if the child stays for the whole day*
+    - type: info
+      title: "❄️ Winter:"
+      content: |-
+        
+
+
+        * *Care for children aged 3 months to 5 years*
+
+        * *Micro-nursery with 12 places*
+
+        * *Meal times only:*
+
+          * *During school holidays: every day*
+          * *Outside of holidays: Tuesdays and Thursdays only*
   openstreet_map:
     enable: true
     latitude: 45.200866
@@ -69,18 +96,4 @@ activity:
 
 
     Whether in summer or winter, for a full day or half day, NormaKids is there to simplify parents' daily lives while ensuring children have unforgettable memories. Because their well-being is our priority, you can entrust your children to us with complete peace of mind!
-
-
-    **☀️ Summer:**
-      * *Children aged 3 to 12*
-      * *16 places for children under 6*
-      * *36 places for children aged 6 and over*
-      * *🍴 Meal times only if the child stays for the whole day*
-
-    **❄️ Winter:**
-      * *Care for children aged 3 months to 5 years*
-      * *Micro-nursery with 12 places*
-      * *Meal times only:*
-        * *During school holidays: every day*
-        * *Outside of holidays: Tuesdays and Thursdays only*
 ---
