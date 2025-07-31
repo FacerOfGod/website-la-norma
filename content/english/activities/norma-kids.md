@@ -38,6 +38,12 @@ activity:
         * Comfortable shoes depending on the activity
 
           *Norma Kids does not provide anything, except drinking water (tap water).*
+    - type: warning
+      title: Registration
+      content: |-
+        * Registration form to be completed (including health form)
+        * Photocopy of vaccinations
+        * Photocopy of the child's identity card or family record book
   openstreet_map:
     enable: true
     latitude: 45.200866
@@ -87,8 +93,8 @@ activity:
 
     * *Micro-nursery with 12 places*
 
-    * Meal times only:
+    * *Meal times only:*
 
-      * During school holidays: every day
-      * Outside of holidays: Tuesdays and Thursdays only
+      * *During school holidays: every day*
+      * *Outside of holidays: Tuesdays and Thursdays only*
 ---
