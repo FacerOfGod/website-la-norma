@@ -1,31 +1,31 @@
-<form action="{{site.Params.contact_form_action }}" method="POST">
-            <div class="flex flex-col md:flex-row gap-+ items-stretch">
+<form action="{{ site.Params.contact_form_action }}" method="POST">
+  <div class="flex flex-col md:flex-row gap-+ items-stretch">
 
-              <!-- Left column -->
-              <div class="flex-1 flex flex-col justify-between  p-4 rounded-md">
-                <div class="mb-6">
-                  <label for="name" class="form-label">Nom Complet <span class="text-red-500">*</span></label>
-                  <input id="name" name="name" class="form-input" placeholder="Jean-Luc Verel" type="text" />
-                </div>
-                <div class="mb-6">
-                  <label for="email" class="form-label">Email <span class="text-red-500">*</span></label>
-                  <input id="email" name="email" class="form-input" placeholder="jean.luc@email.com" type="email" />
-                </div>
-                <div class="mb-6">
-                  <label for="phone" class="form-label">Téléphone <span class="text-red-500">*</span></label>
-                  <input id="phone" name="phone" class="form-input" placeholder="0XXXXXXXXX" type="phone" />
-                </div>
-              </div>
+    <!-- Left column -->
+    <div class="flex-1 flex flex-col justify-between p-4 rounded-md">
+      <div class="mb-6">
+        <label for="name" class="form-label">{{ i18n "contact_form.full_name_label" }} <span class="text-red-500">*</span></label>
+        <input id="name" name="name" class="form-input" placeholder="{{ i18n "contact_form.full_name_placeholder" }}" type="text" />
+      </div>
+      <div class="mb-6">
+        <label for="email" class="form-label">{{ i18n "contact_form.email_label" }} <span class="text-red-500">*</span></label>
+        <input id="email" name="email" class="form-input" placeholder="{{ i18n "contact_form.email_placeholder" }}" type="email" />
+      </div>
+      <div class="mb-6">
+        <label for="phone" class="form-label">{{ i18n "contact_form.phone_label" }} <span class="text-red-500">*</span></label>
+        <input id="phone" name="phone" class="form-input" placeholder="{{ i18n "contact_form.phone_placeholder" }}" type="phone" />
+      </div>
+    </div>
 
-              <!-- Right column (Message) -->
-              <div class="flex-1 flex flex-col  p-4 rounded-md">
-                <div class="mb-6 flex-1 flex flex-col">
-                  <label for="message" class="form-label">Message? <span class="text-red-500">*</span></label>
-                  <textarea id="message" name="message" class="form-input flex-1" placeholder="Placez votre message ici..." rows="8"></textarea>
-                </div>
-              </div>
+    <!-- Right column (Message) -->
+    <div class="flex-1 flex flex-col p-4 rounded-md">
+      <div class="mb-6 flex-1 flex flex-col">
+        <label for="message" class="form-label">{{ i18n "contact_form.message_label" }} <span class="text-red-500">*</span></label>
+        <textarea id="message" name="message" class="form-input flex-1" placeholder="{{ i18n "contact_form.message_placeholder" }}" rows="8"></textarea>
+      </div>
+    </div>
 
-            </div>
+  </div>
 
-            <button type="submit" class="btn btn-primary mt-6 ml-4">Envoyer un message</button>
-        </form>
+  <button type="submit" class="btn btn-primary mt-6 ml-4">{{ i18n "contact_form.submit_button" }}</button>
+</form>

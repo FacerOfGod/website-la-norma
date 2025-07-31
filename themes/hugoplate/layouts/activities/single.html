@@ -1,5 +1,4 @@
 {{ define "main" }}
-  <!-- Banner -->
   {{ with .Params.activity }}
     <section
       class="relative overflow-hidden pt-14 h-screen flex items-center justify-center">
@@ -23,15 +22,11 @@
       <div class="container relative z-20">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <!-- White transparent box -->
             <div
-              class=" border-[4px] border-[#8b5e3c] text-black rounded-4xl p-8.5 shadow-lg backdrop-blur-md object-contain">
-              <div class="col-12 mb-6 ">
-
-                <!-- WEIRD TEMP FIX FOR IMAGE URL TO SOLVE IN ANOTHER WAY LATER -->
+              class="border-[4px] border-[#8b5e3c] text-black rounded-4xl p-8.5 shadow-lg backdrop-blur-md object-contain">
+              <div class="col-12 mb-6">
                 {{ $logoStr := .logo }}
                 {{ $logo := printf "%s" (substr $logoStr 1) }}
-
                 {{ partial "image" (dict "Src" $logo "Alt" "Logo" "Loading" "eager" "Class" "mx-auto lg:w-[300px]" "DisplayXL" "500x") }}
               </div>
 
@@ -40,11 +35,10 @@
                   <a
                     class="btn btn-primary"
                     href="{{ .link | absURL }}"
-                    {{ if strings.HasPrefix .link `http` }}
+                    {{ if strings.HasPrefix .link "http" }}
                       target="_blank" rel="noopener"
                     {{ end }}>
-                    {{ .label }}
-                    <i class="fa fa-arrow-right pl-2"></i>
+                    {{ .label }} <i class="fa fa-arrow-right pl-2"></i>
                   </a>
                 {{ end }}
               {{ end }}
@@ -53,25 +47,27 @@
         </div>
       </div>
     </section>
-    <!-- /Banner -->
-    <div class="container mt-8 text-text">
-      <h2 class="text-xl font-semibold mb-4 text-center">Description</h2>
 
+    <div class="container mt-8 text-text">
+      <h2 class="text-xl font-semibold mb-4 text-center">
+        {{ i18n "activity_single.description_text" }}
+      </h2>
       <div class="prose max-w-none">
         {{ .description | markdownify }}
       </div>
 
       <div class="flex flex-col md:flex-row gap-8 justify-center">
-        <!-- Horaire Table -->
+        <!-- Schedule -->
         <div class="bg-body p-6 rounded-4xl shadow-4xl basis-[51%] max-w-full">
-          <h2 class="text-xl font-semibold mb-4 text-center">Horaire</h2>
+          <h2 class="text-xl font-semibold mb-4 text-center">
+            {{ i18n "activity_single.schedule_text" }}
+          </h2>
 
-          <!-- Tab Buttons -->
           <div class="flex flex-wrap justify-center gap-2 mb-4">
             {{ range $index, $set := .horaire }}
               <button
-                class="tab-btn px-4 py-2 rounded-lg border  transition w-full
-              {{ if eq $index 0 }}
+                class="tab-btn px-4 py-2 rounded-lg border transition w-full
+                  {{ if eq $index 0 }}
                   bg-primary text-white font-semibold
                 {{ else }}
                   bg-white hover:bg-yellow-200
@@ -82,7 +78,6 @@
             {{ end }}
           </div>
 
-          <!-- Tab Contents -->
           {{ range $index, $set := .horaire }}
             <div
               id="horaire-{{ $index }}"
@@ -94,20 +89,24 @@
               <table class="w-full table-auto border-collapse">
                 <thead>
                   <tr>
-                    <th class="text-left p-2 border-b">Jour</th>
-                    <th class="text-left p-2 border-b">Heures d'ouverture</th>
+                    <th class="text-left p-2 border-b">
+                      {{ i18n "activity_single.day_text" }}
+                    </th>
+                    <th class="text-left p-2 border-b">
+                      {{ i18n "activity_single.opening_hours_text" }}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {{ $today := now | dateFormat "Monday" }}
-                  {{- $lang := site.Language.Lang -}}
-                  {{- $weekdays := slice -}}
+                  {{ $lang := site.Language.Lang }}
+                  {{ $weekdays := slice }}
 
-                  {{- if eq $lang "fr" -}}
-                    {{- $weekdays = slice "Lundi" "Mardi" "Mercredi" "Jeudi" "Vendredi" "Samedi" "Dimanche" -}}
-                  {{- else -}}
-                    {{- $weekdays = slice "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" -}}
-                  {{- end -}}
+                  {{ if eq $lang "fr" }}
+                    {{ $weekdays = slice "Lundi" "Mardi" "Mercredi" "Jeudi" "Vendredi" "Samedi" "Dimanche" }}
+                  {{ else }}
+                    {{ $weekdays = slice "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday" }}
+                  {{ end }}
 
                   {{ range $i, $day := $weekdays }}
                     {{ $matches := where $set.entries "day" $day }}
@@ -120,10 +119,10 @@
                           {{ if $entry.hours }}
                             {{ $entry.hours }}
                           {{ else }}
-                            Fermé
+                            {{ i18n "activity_single.no_schedule_text" }}
                           {{ end }}
                         {{ else }}
-                          Fermé
+                          {{ i18n "activity_single.no_schedule_text" }}
                         {{ end }}
                       </td>
                     </tr>
@@ -134,13 +133,17 @@
           {{ end }}
 
           {{ if not .horaire }}
-            <p class="text-center text-gray-500">Aucun horaire disponible.</p>
+            <p class="text-center text-gray-500">
+              {{ i18n "activity_single.no_schedule_text" }}
+            </p>
           {{ end }}
         </div>
 
-        <!-- Tarif Table (Filtered by group == activity title) -->
+        <!-- Pricing -->
         <div class="bg-body p-6 rounded-4xl shadow-4xl basis-[51%] max-w-full">
-          <h2 class="text-xl font-semibold mb-4 text-center">Tarifs</h2>
+          <h2 class="text-xl font-semibold mb-4 text-center">
+            {{ i18n "activity_single.pricing_text" }}
+          </h2>
 
           {{ $tickets := where site.RegularPages "Section" "tickets" }}
           {{ $activityName := .name }}
@@ -150,16 +153,20 @@
             <table class="w-full mb-4 border-collapse table-auto">
               <thead>
                 <tr>
-                  <th class="p-2 border-b text-left">Ticket</th>
-                  <th class="p-2 border-b text-right min-w-[8rem]">Price</th>
+                  <th class="p-2 border-b text-left">
+                    {{ i18n "activity_single.ticket_text" }}
+                  </th>
+                  <th class="p-2 border-b text-right min-w-[8rem]">
+                    {{ i18n "activity_single.price_text" }}
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {{ range $filtered }}
                   <tr>
                     <td class="prose p-2 border-b">
-                      <strong>{{ .Title  | markdownify }}</strong><br />
-                      <small>{{ .Params.info  | markdownify }}</small>
+                      <strong>{{ .Title | markdownify }}</strong><br />
+                      <small>{{ .Params.info | markdownify }}</small>
                     </td>
                     <td class="p-2 border-b text-right">
                       {{ .Params.price }} €
@@ -168,30 +175,30 @@
                 {{ end }}
               </tbody>
             </table>
-            <!-- Button Link -->
           {{ else }}
             <p class="text-center text-gray-500">
-              Aucun tarif disponible pour cette activité.
+              {{ i18n "activity_single.no_pricing_text" }}
             </p>
           {{ end }}
           <div class="text-center mt-4">
             <a
               href="{{ "practical-information" | relLangURL }}"
               class="inline-block bg-primary text-white px-6 py-2 rounded-lg hover:bg-dark transition">
-              Voir tous les tarifs
+              {{ i18n "activity_single.view_all_prices_text" }}
             </a>
           </div>
         </div>
       </div>
 
-      <!--Notifications-->
       {{ partial "components/notifications.html" .notifications }}
 
 
       <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
         <div
           class="bg-body p-6 rounded-4xl shadow-4xl basis-[40%] flex flex-col">
-          <h2 class="text-xl font-semibold mb-4 text-center">Map</h2>
+          <h2 class="text-xl font-semibold mb-4 text-center">
+            {{ i18n "activity_single.map_text" }}
+          </h2>
           <div class="flex-grow">
             {{ partial "components/openstreet_map" . }}
           </div>
@@ -199,7 +206,9 @@
 
         <div
           class="bg-body p-6 rounded-4xl shadow-4xl basis-[60%] flex flex-col">
-          <h2 class="text-xl font-semibold mb-4 text-center">Contact</h2>
+          <h2 class="text-xl font-semibold mb-4 text-center">
+            {{ i18n "activity_single.contact_text" }}
+          </h2>
           <div class="flex-grow">
             {{ partial "components/contact_form" . }}
           </div>
@@ -210,22 +219,14 @@
         document.querySelectorAll(".tab-btn").forEach((button) => {
           button.addEventListener("click", () => {
             const target = button.getAttribute("data-target");
-
-            // Hide all tab contents
-            document.querySelectorAll(".tab-content").forEach((tab) => {
-              tab.classList.add("hidden");
-            });
-
-            // Show the selected tab content
+            document
+              .querySelectorAll(".tab-content")
+              .forEach((tab) => tab.classList.add("hidden"));
             document.getElementById(target).classList.remove("hidden");
-
-            // Reset all tab button styles
             document.querySelectorAll(".tab-btn").forEach((btn) => {
               btn.classList.remove("bg-primary", "font-semibold", "text-white");
               btn.classList.add("bg-white", "hover:bg-yellow-200");
             });
-
-            // Highlight the active tab button
             button.classList.remove("bg-white", "hover:bg-yellow-200");
             button.classList.add("bg-primary", "font-semibold", "text-white");
           });
@@ -234,7 +235,6 @@
 
       <!-- Gallery -->
       {{ partial "components/gallery" . }}
-
     </div>
   {{ end }}
 {{ end }}

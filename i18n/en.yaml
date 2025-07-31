@@ -12,3 +12,31 @@ search_initial_message: Type something to search..
 search_navigate: to navigate
 search_select: to select
 search_close: to close
+
+# Contact form translations
+contact_form:
+  full_name_label: Full Name
+  full_name_placeholder: Jean-Luc Verel
+  email_label: Email
+  email_placeholder: jean.luc@email.com
+  phone_label: Phone
+  phone_placeholder: 0XXXXXXXXX
+  message_label: Message?
+  message_placeholder: Place your message here...
+  submit_button: Send a message
+
+# Activity translations
+activity_single:
+  description_text: Description
+  schedule_text: Schedule
+  pricing_text: Pricing
+  map_text: Map
+  contact_text: Contact
+  day_text: Day
+  opening_hours_text: Opening Hours
+  no_schedule_text: No schedule available.
+  no_pricing_text: No pricing available for this activity.
+  ticket_text: Ticket
+  price_text: Price
+  view_all_prices_text: View all prices
+
