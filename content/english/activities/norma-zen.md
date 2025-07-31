@@ -33,20 +33,38 @@ activity:
     longitude: 6.691756
   visibleInCMS: true
   name: Norma Zen
-  description: |-
+  description: >-
     Nestled within the La Norma leisure center, Norma Zen invites you to enjoy
+
     an immersive wellness experience designed to offer you relaxation and serenity
+
     all year round — in both summer and winter. 
 
+
     Whether you're returning from a refreshing hike or an intense day on the ski slopes,
+
     Norma Zen is the perfect place to unwind and take care of yourself.
+
     Picture yourself embraced by a soothing atmosphere, with breathtaking views
+
     of majestic peaks — lush green in summer or sparkling under the snow in winter.
 
+
     Between massages, relaxation areas, and tailored treatments, every moment spent
+
     at Norma Zen is a magical break where body and mind find balance and harmony.
+
     Let yourself be wrapped in this cocoon of calm in an exceptional natural setting —
+
     a true invitation to relax and reconnect with yourself.
+
+
+    💧 Ce qui vous attend :
+     - Sauna et bain nordique chauffé à 36°C
+     - Ambiance privative, de 2 à 6 personnes
+     - 1 terrasse pour se détendre pendant la séance
+     - Douche et WC dans chaque module
+     - Possibilité de boissons ou planches apéro en supplément
   horaire:
     - window: Summer (Jul, Aug)
       entries:
@@ -82,5 +100,4 @@ activity:
           hours: 2:00 PM – 7:00 PM
   image: /images/activities/norma-zen/spa-image.jpg
   logo: /images/activities/norma-zen/norma-zen-logo.png
-
 ---
