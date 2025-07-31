@@ -44,6 +44,28 @@ activity:
         * Formulaire d’inscription à compléter (incluant le formulaire santé)
         * Photocopie des vaccins
         * Photocopie de la carte d’identité de l’enfant ou du livret de famille
+    - type: info
+      title: "☀️ Été :"
+      content: |-
+        * *Enfants âgés de 3 à 12 ans*
+
+        * *16 places pour les enfants de moins de 6 ans*
+
+        * *36 places pour les enfants de 6 ans et plus*
+
+        * *🍴 Repas uniquement si l'enfant reste toute la journée*
+    - type: info
+      title: "❄️ Hiver :"
+      content: |-
+        * *Garde des enfants de 3 mois à 5 ans*
+
+        * *Micro-crèche avec 12 places*
+
+        * *Repas uniquement :*
+
+          * *Pendant les vacances scolaires : tous les jours*
+
+          * *En dehors des vacances : uniquement les mardis et jeudis*
   openstreet_map:
     enable: true
     latitude: 45.200866
@@ -62,19 +84,5 @@ activity:
     Nos équipes sont composées de professionnels qualifiés, passionnés par le monde de l’enfance, formés pour accompagner chaque enfant avec bienveillance, attention et respect. Leur mission : offrir un cadre structurant et épanouissant, propice à la découverte, la socialisation et l’autonomie.
 
     Que ce soit en été ou en hiver, à la journée ou à la demi-journée, NormaKids simplifie le quotidien des parents tout en garantissant aux enfants des souvenirs inoubliables. Parce que leur bien-être est notre priorité, confiez-nous vos enfants en toute sérénité !
-
-
-    **☀️ Été :**
-      * *Enfants de 3 à 12 ans*
-      * *16 places pour les enfants de moins de 6 ans*
-      * *36 places pour les enfants de 6 ans et plus*
-      * *🍴 Repas uniquement si l’enfant reste toute la journée*
-
-    **❄️ Hiver :**
-      * *Accueil des enfants de 3 mois à 5 ans*
-      * *Micro-crèche de 12 places*
-      * *Repas uniquement :*
-        * *Pendant les vacances scolaires : tous les jours*
-        * *Hors vacances : uniquement les mardis et jeudis*
 
 ---
