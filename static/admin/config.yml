@@ -57,7 +57,7 @@ collections:
         widget: object
         fields:
           - { label: Nom, name: name, widget: string, required: true, hint: "Entrez le nom de l’activité, par ex. « Norma Loops »" }
-          - { label: Description, name: description, widget: text, required: true, hint: "Description expliquant le contenu de l’activité." }
+          - { label: Description, name: description, widget: markdown, required: true, hint: "Description expliquant le contenu de l’activité." }
 
           - label: Horaire
             name: horaire
