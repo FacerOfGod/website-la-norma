@@ -1,38 +1,42 @@
 {{ with .Params.activity }}
-<div
-  class="min-h-[300px] max-w-sm relative group rounded-xl overflow-hidden shadow-2xl cursor-pointer"
-  onclick="window.location.href='{{ $.Page.RelPermalink }}'"
->
-
-  <!-- Background image with transparency -->
+  <!-- WEIRD TEMP FIX FOR IMAGE URL TO SOLVE IN ANOTHER WAY LATER -->
+  {{ $logoStr := .logo }}
+  {{ $logo := printf "%s" (substr $logoStr 1) }}
+  {{ $imageStr := .image }}
+  {{ $image := printf "%s" (substr $imageStr 1) }}
   <div
-    class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:opacity-0"
-    style="background-image: url('{{ .image | absURL }}');"
-  ></div>
+    class="min-h-[300px] max-w-sm relative group rounded-xl overflow-hidden shadow-2xl cursor-pointer"
+    onclick="window.location.href='{{ $.Page.RelPermalink }}'">
+    <!-- Background image with transparency -->
+    <div
+      class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:opacity-0"
+      style="background-image: url('{{ $image | absURL }}');"></div>
 
-  <!-- Bigger logo overlay centered with white circle -->
-  <div
-    class="absolute inset-0 flex items-center shadow-4xl justify-center transition-opacity duration-300 group-hover:opacity-0 z-10"
-  >
-    <div class="bg-white rounded-full p-6 shadow-lg flex items-center justify-center" style="width: 200px; height: 200px;">
-      {{ partial "image" (dict "Src" .logo "Alt" "Activity logo" "Loading" "eager" "Class" "max-w-[175px] max-h-[175px] object-contain") }}
+    <!-- Bigger logo overlay centered with white circle -->
+    <div
+      class="absolute inset-0 flex items-center shadow-4xl justify-center transition-opacity duration-300 group-hover:opacity-0 z-10">
+      <div
+        class="bg-white rounded-full p-6 shadow-lg flex items-center justify-center"
+        style="width: 200px; height: 200px;">
+        {{ partial "image" (dict "Src" $logo "Alt" "Activity logo" "Loading" "eager" "Class" "max-w-[175px] max-h-[175px] object-contain") }}
+      </div>
+    </div>
+
+    <!-- Content shown on hover -->
+    <div
+      class="relative bg-white rounded-xl p-8 h-[400px] flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+      <h4 class="text-2xl font-semibold mb-3 text-center text-text-light">
+        {{ .name | markdownify }}
+      </h4>
+
+      <p class="mb-6 text-gray-700">
+        {{ .description | truncate 200 | safeHTML | markdownify }}
+      </p>
+
+      <span
+        class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-lg hover:bg-light transition ">
+        See activity →
+      </span>
     </div>
   </div>
-
-  <!-- Content shown on hover -->
-  <div
-    class="relative bg-white rounded-xl p-8 h-[400px] flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
-  >
-    <h4 class="text-2xl font-semibold mb-3 text-center text-text-light">{{ .name | markdownify }}</h4>
-
-    <p class="mb-6 text-gray-700">
-      {{ .description | truncate 200 | safeHTML | markdownify }}
-    </p>
-
-    <span class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-lg hover:bg-light transition ">
-      See activity →
-    </span>
-  </div>
-
-</div>
 {{ end }}
