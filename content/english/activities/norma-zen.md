@@ -59,18 +59,20 @@ activity:
     a true invitation to relax and reconnect with yourself.
 
 
-    **💧 Ce qui vous attend :**
 
 
-    * *Sauna et bain nordique chauffé à 36°C*
+    **💧 What to expect:** 
 
-    * *Ambiance privative, de 2 à 6 personnes*
 
-    * *1 terrasse pour se détendre pendant la séance*
+    * *Sauna and Nordic bath heated to 36°C* 
 
-    * *Douche et WC dans chaque module*
+    * *Private atmosphere, for 2 to 6 people* 
 
-    * *Possibilité de boissons ou planches apéro en supplément*
+    * *1 terrace to relax on during your session*
+
+    *  *Shower and toilet in each module* 
+
+    * *Drinks or appetizer platters available at an additional cost*
   horaire:
     - window: Summer (Jul, Aug)
       entries:
