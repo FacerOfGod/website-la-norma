@@ -34,7 +34,7 @@ activity_single:
   contact_text: Contact
   day_text: Day
   opening_hours_text: Opening Hours
-  no_schedule_text: No schedule available.
+  no_schedule_text: Closed
   no_pricing_text: No pricing available for this activity.
   ticket_text: Ticket
   price_text: Price

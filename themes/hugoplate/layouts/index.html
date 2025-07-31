@@ -50,16 +50,15 @@
 
   <section class="py-12">
     <div class="container mx-auto px-4">
-<div class="text-center mt-16 mb-30">
-  <h1 class="mb-4 text-3xl lg:text-8xl">
+<div class="mt-4 mb-30">
+  <h1 class="mb-4 text-3xl lg:text-8xl text-center">
     {{ .Params.banner.title | markdownify }}
   </h1>
 
-  <p class="mb-8">
+  <div class="prose mb-8 text-left max-w-none">
     {{ .Params.banner.content | markdownify }}
-  </p>
+  </div>
 </div>
-
       {{ $authors := site.GetPage "section" "activities" }}
       <!-- Centered Container -->
       <div class="flex justify-center">

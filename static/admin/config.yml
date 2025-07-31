@@ -39,7 +39,7 @@ collections:
             widget: "object"
             fields:
               - { name: "title", label: "Title", widget: "string" }
-              - { name: "content", label: "Content", widget: "text" }
+              - { name: "content", label: "Content", widget: "markdown" }
               - { name: "logo", label: "Logo Image", widget: "image" }
 
   - name: activities

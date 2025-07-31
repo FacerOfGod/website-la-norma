@@ -1,0 +1,41 @@
+home: Accueil
+read_more: En savoir plus
+send: Envoyer
+related_posts: Articles liés
+categories: Catégories
+tags: Tags
+toc: Table des matières
+share: Partager
+search_input_placeholder: Rechercher un article...
+search_no_results: Aucun résultat pour
+search_initial_message: Tapez quelque chose pour rechercher...
+search_navigate: pour naviguer
+search_select: pour sélectionner
+search_close: pour fermer
+
+# Traductions formulaire de contact
+contact_form:
+  full_name_label: Nom complet
+  full_name_placeholder: Jean-Luc Verel
+  email_label: Email
+  email_placeholder: jean.luc@email.com
+  phone_label: Téléphone
+  phone_placeholder: 0XXXXXXXXX
+  message_label: Message
+  message_placeholder: Écrivez votre message ici...
+  submit_button: Envoyer un message
+
+# Traductions activité
+activity_single:
+  description_text: Description
+  schedule_text: Horaires
+  pricing_text: Tarifs
+  map_text: Carte
+  contact_text: Contact
+  day_text: Jour
+  opening_hours_text: Horaires d'ouverture
+  no_schedule_text: Fermé
+  no_pricing_text: Aucun tarif disponible pour cette activité.
+  ticket_text: Billet
+  price_text: Prix
+  view_all_prices_text: Voir tous les tarifs

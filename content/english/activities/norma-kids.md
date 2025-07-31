@@ -5,27 +5,27 @@ activity:
   horaire:
     - window: Summer
       entries:
-        - day: Lundi
+        - day: Monday
           hours: 8:30 - 17:00
-        - day: Mardi
+        - day: Tuesday
           hours: 8:30 - 17:00
-        - day: Mercredi
+        - day: Wednesday
           hours: 8:30 - 17:00
-        - day: Jeudi
+        - day: Thursday
           hours: 8:30 - 17:00
-        - day: Vendredi
+        - day: Friday
           hours: 8:30 - 17:00
     - window: Winter
       entries:
-        - day: Lundi
+        - day: Monday
           hours: 9:00 - 17:00
-        - day: Mardi
+        - day: Tuesday
           hours: 9:00 - 17:00
-        - day: Mercredi
+        - day: Wednesday
           hours: 9:00 - 17:00
-        - day: Jeudi
+        - day: Thursday
           hours: 9:00 - 17:00
-        - day: Vendredi
+        - day: Friday
           hours: 9:00 - 17:00
   notifications:
     - title: "What parents need to plan for:"
@@ -71,30 +71,16 @@ activity:
     Whether in summer or winter, for a full day or half day, NormaKids is there to simplify parents' daily lives while ensuring children have unforgettable memories. Because their well-being is our priority, you can entrust your children to us with complete peace of mind!
 
 
+    **☀️ Summer:**
+      * *Children aged 3 to 12*
+      * *16 places for children under 6*
+      * *36 places for children aged 6 and over*
+      * *🍴 Meal times only if the child stays for the whole day*
 
-
-    **☀️Summer**
-
-
-    * *Children aged 3 to 12*
-
-    * *16 places for children under 6*
-
-    * *36 places for children aged 6 and over*
-
-    * *🍴 Meal times only if the child stays for the whole day*
-
-
-
-    **❄️Winter**
-
-
-    * *Care for children aged 3 months to 5 years*
-
-    * *Micro-nursery with 12 places*
-
-    * *Meal times only:*
-
-      * *During school holidays: every day*
-      * *Outside of holidays: Tuesdays and Thursdays only*
+    **❄️ Winter:**
+      * *Care for children aged 3 months to 5 years*
+      * *Micro-nursery with 12 places*
+      * *Meal times only:*
+        * *During school holidays: every day*
+        * *Outside of holidays: Tuesdays and Thursdays only*
 ---

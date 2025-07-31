@@ -22,19 +22,19 @@ activity:
   horaire:
     - window: Juillet - Août
       entries:
-        - day: Lundi
+        - day: Monday
           hours: 11:15 - 18:30
-        - day: Mardi
+        - day: Tuesday
           hours: 11:15 - 18:30
-        - day: Mercredi
+        - day: Wednesday
           hours: 11:15 - 18:30
-        - day: Jeudi
+        - day: Thursday
           hours: 11:15 - 18:30
-        - day: Vendredi
+        - day: Friday
           hours: 11:15 - 18:30
-        - day: Samedi
+        - day: Saturday
           hours: 11:15 - 18:30
-        - day: Dimanche
+        - day: Sunday
           hours: 11:15 - 18:30
   logo: /images/activities/norma-o/norma-zen-logo.png
   image: /images/activities/norma-o/plan-eau.jpg

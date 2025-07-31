@@ -5,27 +5,26 @@ activity:
       title: Ouvertures exceptionnelles
       content: Suivez-nous sur les réseaux sociaux
     - type: warning
+      title: Règles
       content: |-
-        Réservations uniquement sur place.
-        Réservation en ligne bientôt disponible.
-      title: "Règlement "
+        Les réservations sont uniquement disponibles sur place.
+        La réservation en ligne sera bientôt disponible.
     - type: remark
+      title: À noter
       content: |-
-        * Serviettes non fournies
+        * Les serviettes ne sont pas fournies
         * Douche obligatoire avant la séance
-        * Réservation obligatoire : 
+        * Réservation obligatoire :
             - 📞 07 44 93 09 98
             - 📞 04 79 05 53 07
-
-      title: À noter
     - type: attention
-      title: Conditions d’accès
+      title: Conditions d'accès
       content: |-
         * À partir de 10 ans, accompagné d’un adulte
         * Accès interdit :
 
           * aux **femmes enceintes**
-          * aux personnes atteintes de **maladies cardiaques**
+          * aux personnes ayant des **problèmes cardiaques**
           * aux personnes à **mobilité réduite**
   openstreet_map:
     enable: true
@@ -34,49 +33,71 @@ activity:
     longitude: 6.691756
   visibleInCMS: true
   name: Norma Zen
-  description: |-
-    Niché au sein de la base de loisirs de La Norma, Norma Zen vous invite à
-    vivre une expérience de bien-être immersive, conçue pour vous offrir
-    relaxation et sérénité tout au long de l’année, été comme hiver.
+  description: >-
+    Niché au sein du centre de loisirs de La Norma, Norma Zen vous invite à
+    profiter d’une expérience bien-être immersive conçue pour vous offrir
+    détente et sérénité tout au long de l’année — en été comme en hiver.
 
+    Que vous reveniez d’une randonnée revigorante ou d’une journée intense sur
+    les pistes de ski, Norma Zen est l’endroit idéal pour vous détendre et
+    prendre soin de vous.
 
-    Que vous reveniez d’une randonnée revigorante ou d’une journée intense sur les pistes de ski, Norma Zen est l’endroit idéal pour décompresser et prendre soin de vous. Imaginez-vous, bercé par une atmosphère apaisante, face à une vue imprenable sur les sommets majestueux, qu’ils soient parés de leur manteau verdoyant en été ou scintillant sous la neige en hiver.
+    Imaginez-vous enveloppé par une atmosphère apaisante, avec une vue
+    imprenable sur des sommets majestueux — verts en été ou étincelants sous
+    la neige en hiver.
 
+    Entre massages, espaces de détente et soins personnalisés, chaque moment
+    passé à Norma Zen est une pause magique où corps et esprit retrouvent
+    équilibre et harmonie.
 
-    Entre massages, espaces détente et soins adaptés, chaque moment passé chez Norma Zen est une parenthèse enchantée, où le corps et l’esprit retrouvent équilibre et harmonie. Laissez-vous envelopper par cette bulle de douceur au cœur d’un décor naturel exceptionnel, véritable invitation à la détente et à la reconnexion avec soi-même.
+    Laissez-vous envelopper dans ce cocon de calme au cœur d’un cadre naturel
+    exceptionnel — une véritable invitation à la relaxation et à la
+    reconnexion avec vous-même.
+
+    **💧 À quoi s’attendre :**
+
+    * *Sauna et bain nordique chauffés à 36°C*
+
+    * *Ambiance privée, pour 2 à 6 personnes*
+
+    * *1 terrasse pour vous détendre pendant votre séance*
+
+    * *Douche et toilettes dans chaque module*
+
+    * *Boissons ou plateaux apéritifs disponibles en supplément*
   horaire:
-    - window: Eté (Juil, Août)
+    - window: Été (juillet, août)
       entries:
         - day: Lundi
-          hours: 11:00 - 22:00
+          hours: 11h00 – 22h00
         - day: Mardi
-          hours: 11:00 - 22:00
+          hours: 11h00 – 22h00
         - day: Mercredi
-          hours: 11:00 - 22:00
+          hours: 11h00 – 22h00
         - day: Jeudi
-          hours: 11:00 - 22:00
+          hours: 11h00 – 22h00
         - day: Vendredi
-          hours: 11:00 - 22:00
+          hours: 11h00 – 22h00
         - day: Samedi
-          hours: 11:00 - 19:00
+          hours: 11h00 – 19h00
         - day: Dimanche
-          hours: 11:00 - 19:00
-    - window: Hiver (Déc, Janv, Févr, Mars)
+          hours: 11h00 – 19h00
+    - window: Hiver (déc., janv., févr., mars)
       entries:
         - day: Lundi
-          hours: 14:00 - 20:00
+          hours: 14h00 – 20h00
         - day: Mardi
-          hours: 14:00 - 20:00
+          hours: 14h00 – 20h00
         - day: Mercredi
-          hours: 14:00 - 20:00
+          hours: 14h00 – 20h00
         - day: Jeudi
-          hours: 14:00 - 20:00
-    - window: Inter-Saison (Mai, Juin, Sept, Oct)
+          hours: 14h00 – 20h00
+    - window: Hors saison (mai, juin, sept., oct.)
       entries:
         - day: Samedi
-          hours: 14:00 - 19:00
+          hours: 14h00 – 19h00
         - day: Dimanche
-          hours: 14:00 - 19:00
-  image: images/activities/norma-zen/spa-image.jpg
-  logo: images/activities/norma-zen/norma-zen-logo.png 
+          hours: 14h00 – 19h00
+  image: /images/activities/norma-zen/spa-image.jpg
+  logo: /images/activities/norma-zen/norma-zen-logo.png
 ---
