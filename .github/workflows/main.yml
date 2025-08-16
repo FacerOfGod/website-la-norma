@@ -90,7 +90,7 @@ jobs:
           path: ./public
 
       - name: Deploy to o2switch via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v6
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.O2SWITCH_HOST }}
           username: ${{ secrets.O2SWITCH_USER }}
