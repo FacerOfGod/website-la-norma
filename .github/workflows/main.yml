@@ -65,6 +65,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
+          name: pages-artifact
           path: ./public
 
   # Deployment jobs
@@ -80,9 +81,17 @@ jobs:
         uses: actions/deploy-pages@v4.0.5
 
   deploy-o2switch:
+
+
+
     runs-on: ubuntu-24.04
     needs: build
     steps:
+      - name: Download public folder
+        uses: actions/download-artifact@v3
+        with:
+          name: pages-artifact
+
       - name: Deploy to o2switch via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
