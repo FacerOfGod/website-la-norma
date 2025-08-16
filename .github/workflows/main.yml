@@ -104,7 +104,8 @@ jobs:
 
       - name: Zip public folder
         run: |
-          zip -r site.zip  o2switch
+          cd o2switch
+          zip -r ../test/site.zip .
           cd ..
 
 
@@ -114,5 +115,5 @@ jobs:
           server: ${{ secrets.O2SWITCH_HOST }}
           username: ${{ secrets.O2SWITCH_USER }}
           password: ${{ secrets.O2SWITCH_PASSWORD }}
-          local-dir: ./site.zip/
+          local-dir: ./test/
           server-dir: ${{ secrets.O2SWITCH_PATH }}
