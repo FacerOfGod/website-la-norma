@@ -1,58 +1,117 @@
 {{ with .Params.event }}
-<div class=" relative rounded-xl overflow-hidden shadow-lg border border-transparent hover:border-3 hover:border-primary transition-all p-4 flex flex-col justify-between bg-white">
+<div class="group relative rounded-xl overflow-hidden shadow-lg border border-gray-100 
+            hover:border-primary hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]
+            transition-all duration-500 ease-out p-6 flex flex-col justify-between 
+            bg-white cursor-pointer"
+     onclick="window.location.href='{{ $.Page.RelPermalink }}'">
 
-    <!-- 🏷️ Tags in top right -->
+    <!-- Subtle gradient overlay on hover -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-light/5 
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+    <!-- Enhanced Tags -->
     {{ with .tags }}
         <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end z-20">
-        {{ range . }}
-            <span class="bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full">
-            #{{ . }}
+        {{ range $index, $tag := . }}
+            <span class="bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full
+                         hover:bg-primary/20 transform hover:scale-105 transition-all duration-300
+                         animate-slide-in" style="animation-delay: {{ mul $index 100 }}ms;">
+                #{{ $tag }}
             </span>
         {{ end }}
         </div>
     {{ end }}
 
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col h-full justify-between space-y-4">
+        <div class="space-y-4">
+            <!-- Enhanced title -->
+            <h4 class="text-2xl font-bold text-gray-800 transform group-hover:text-primary 
+                       transition-colors duration-300">
+                {{ .name }}
+            </h4>
 
-  <!-- Content -->
-  <div class="z-10 flex flex-col h-full justify-between">
-    <div>
-      <h4 class="text-2xl font-semibold mb-3">{{ .name }}</h4>
+            <!-- Enhanced date with icon -->
+            <div class="flex items-center gap-2 text-sm text-primary font-medium">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>
+                    {{ $dateFormat := "Jan 2, 2006" }}
+                    {{ $timeFormat := "3:04 PM" }}
 
-<p class="text-sm mb-4 text-primary">
-  {{ $dateFormat := "Jan 2, 2006" }}
-  {{ $timeFormat := "3:04 PM" }}
+                    {{ if and .date_start .date_end }}
+                        {{ $start := time .date_start }}
+                        {{ $end := time .date_end }}
+                        {{ $start | time.Format $dateFormat }}
+                        {{ if or (ne ($start.Hour) 0) (ne ($start.Minute) 0) }} {{ $start | time.Format $timeFormat }}{{ end }}
+                        –
+                        {{ $end | time.Format $dateFormat }}
+                        {{ if or (ne ($end.Hour) 0) (ne ($end.Minute) 0) }} {{ $end | time.Format $timeFormat }}{{ end }}
 
-  {{ if and .date_start .date_end }}
-    {{ $start := time .date_start }}
-    {{ $end := time .date_end }}
-    {{ $start | time.Format $dateFormat }}
-    {{ if or (ne ($start.Hour) 0) (ne ($start.Minute) 0) }} {{ $start | time.Format $timeFormat }}{{ end }}
-    –
-    {{ $end | time.Format $dateFormat }}
-    {{ if or (ne ($end.Hour) 0) (ne ($end.Minute) 0) }} {{ $end | time.Format $timeFormat }}{{ end }}
+                    {{ else if .date_start }}
+                        {{ $start := time .date_start }}
+                        {{ $start | time.Format $dateFormat }}
+                        {{ if or (ne ($start.Hour) 0) (ne ($start.Minute) 0) }} {{ $start | time.Format $timeFormat }}{{ end }}
 
-  {{ else if .date_start }}
-    {{ $start := time .date_start }}
-    {{ $start | time.Format $dateFormat }}
-    {{ if or (ne ($start.Hour) 0) (ne ($start.Minute) 0) }} {{ $start | time.Format $timeFormat }}{{ end }}
+                    {{ else }}
+                        Date TBA
+                    {{ end }}
+                </span>
+            </div>
 
-  {{ else }}
-    Date TBA
-  {{ end }}
-</p>
+            <!-- Enhanced description -->
+            <p class="text-gray-600 leading-relaxed transform group-hover:text-gray-700 
+                     transition-colors duration-300">
+                {{ .description | truncate 500 | safeHTML }}
+            </p>
+        </div>
 
-
-      <p class="text-black/90">
-        {{ .description | truncate 500 | safeHTML }}
-      </p>
+        <!-- Enhanced button -->
+        <div class="pt-2">
+            <span class="group/btn inline-flex items-center gap-2 px-6 py-3 
+                         bg-primary text-white rounded-lg shadow-md
+                         hover:bg-light hover:shadow-lg hover:scale-105 
+                         transform transition-all duration-300 ease-out">
+                <span>See event</span>
+                <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 
+                           transition-transform duration-300" 
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M9 5l7 7-7 7"></path>
+                </svg>
+            </span>
+        </div>
     </div>
 
-    <a href="{{ $.Page.RelPermalink }}"
-      class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-lg hover:bg-light transition"
-    >
-      See event →
-    </a>
-  </div>
-
+    <!-- Bottom accent line -->
+    <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-light 
+                group-hover:w-full transition-all duration-500 delay-100"></div>
 </div>
+
+<style>
+    @keyframes slide-in {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-slide-in {
+        animation: slide-in 0.4s ease-out forwards;
+        opacity: 0;
+    }
+
+    /* Focus states for accessibility */
+    .group:focus-within {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+    }
+</style>
+
 {{ end }}
