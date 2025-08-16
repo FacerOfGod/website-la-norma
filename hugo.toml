@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "http://lanorma.asbpicweb.odns.fr"
+baseURL = "https://vexflip.github.io/website-la-norma/"
 # Title of your website (required).
 title = "La Norma"
 # Your theme name

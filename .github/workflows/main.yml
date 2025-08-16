@@ -62,11 +62,21 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload artifact Github pages
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: ./public
+
+      - name: Rebuild site for o2switch with correct baseURL
+        run: npm run build -- -- --baseURL="http://lanorma.asbpicweb.odns.fr"
+
+      - name: Upload artifact Github pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ./o2switch
+
 
   # Deployment jobs
   deploy:
@@ -88,12 +98,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: ./public
+          path: ./o2switch
 
 
       - name: Zip public folder
         run: |
-          cd public
+          cd o2switch
           zip -r ../site.zip .
           cd ..
 
@@ -104,5 +114,5 @@ jobs:
           server: ${{ secrets.O2SWITCH_HOST }}
           username: ${{ secrets.O2SWITCH_USER }}
           password: ${{ secrets.O2SWITCH_PASSWORD }}
-          local-dir: ./site.zip
+          local-dir: ./site.zip/
           server-dir: ${{ secrets.O2SWITCH_PATH }}
