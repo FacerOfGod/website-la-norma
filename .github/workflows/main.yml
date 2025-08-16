@@ -69,7 +69,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
           git add -f public
           git commit -m "chore(ci): update public folder [skip ci]" || echo "No changes to commit"
-          git push origin HEAD:main
+          git push 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
