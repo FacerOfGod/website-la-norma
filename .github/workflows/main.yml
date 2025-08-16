@@ -65,6 +65,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
+          name: hugo-public
           path: ./public
 
   # Deployment jobs
