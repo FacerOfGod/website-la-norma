@@ -69,7 +69,8 @@ jobs:
           path: ./public
 
       - name: Rebuild site for o2switch with correct baseURL
-        run: npm run build -- -- --baseURL="http://lanorma.asbpicweb.odns.fr" --destination ./o2switch
+        run: npm run build -- --baseURL="http://lanorma.asbpicweb.odns.fr" --destination=./o2switch
+
 
       - name: Upload artifact o2switch pages
         uses: actions/upload-artifact@v4
