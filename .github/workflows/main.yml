@@ -90,11 +90,19 @@ jobs:
           name: github-pages
           path: ./public
 
+
+      - name: Zip public folder
+        run: |
+          cd public
+          zip -r ../site.zip .
+          cd ..
+
+
       - name: Deploy to o2switch via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.O2SWITCH_HOST }}
           username: ${{ secrets.O2SWITCH_USER }}
           password: ${{ secrets.O2SWITCH_PASSWORD }}
-          local-dir: ./public/
+          local-dir: ./site.zip
           server-dir: ${{ secrets.O2SWITCH_PATH }}
