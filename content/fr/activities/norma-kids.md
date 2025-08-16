@@ -1,88 +1,87 @@
 ---
 activity:
+  contact_form_action: none
+  description: 'At NormaKids, we do everything we can to offer families a high-quality
+    childcare service that is safe and attentive to the needs of each child. Whether
+    during school holidays or outside of them, our facility is open all year round
+    to support children of all ages in a warm, stimulating, and reassuring environment.
+
+
+    Designed to adapt to each child''s pace, NormaKids offers a variety of fun and
+    educational activities, divided into age groups to ensure that each child has
+    an enriching experience tailored to their development. Outdoor games, creative
+    workshops, sensory discoveries, sports activities, and quiet time: each day is
+    carefully organized to combine fun, learning, and well-being.
+
+
+    Our teams are made up of qualified professionals who are passionate about the
+    world of childhood and trained to support each child with kindness, attention,
+    and respect. Their mission: to provide a structured and fulfilling environment
+    that is conducive to discovery, socialization, and independence.
+
+
+    Whether in summer or winter, for a full day or half day, NormaKids is there to
+    simplify parents'' daily lives while ensuring children have unforgettable memories.
+    Because their well-being is our priority, you can entrust your children to us
+    with complete peace of mind!'
+  gallery: []
   gallery-image:
-    - test.jpg
+  - test.jpg
   horaire:
-    - window: Été
-      entries:
-        - day: Lundi
-          hours: 8:30 - 17:00
-        - day: Mardi
-          hours: 8:30 - 17:00
-        - day: Mercredi
-          hours: 8:30 - 17:00
-        - day: Jeudi
-          hours: 8:30 - 17:00
-        - day: Vendredi
-          hours: 8:30 - 17:00
-    - window: Hiver
-      entries:
-        - day: Lundi
-          hours: 9:00 - 17:00
-        - day: Mardi
-          hours: 9:00 - 17:00
-        - day: Mercredi
-          hours: 9:00 - 17:00
-        - day: Jeudi
-          hours: 9:00 - 17:00
-        - day: Vendredi
-          hours: 9:00 - 17:00
+  - entries:
+    - day: Monday
+      hours: 8:30 - 17:00
+    - day: Tuesday
+      hours: 8:30 - 17:00
+    - day: Wednesday
+      hours: 8:30 - 17:00
+    - day: Thursday
+      hours: 8:30 - 17:00
+    - day: Friday
+      hours: 8:30 - 17:00
+    window: Summer
+  - entries:
+    - day: Monday
+      hours: 9:00 - 17:00
+    - day: Tuesday
+      hours: 9:00 - 17:00
+    - day: Wednesday
+      hours: 9:00 - 17:00
+    - day: Thursday
+      hours: 9:00 - 17:00
+    - day: Friday
+      hours: 9:00 - 17:00
+    window: Winter
+  image: /images/activities/norma-kids/norma-kids-1.jpg
+  logo: /images/activities/norma-kids/norma-kids-logo.png
+  name: Norma Kids
   notifications:
-    - title: "Ce que les parents doivent prévoir :"
-      type: attention
-      content: >-
-        * Pique-nique et goûters (Note : en hiver, les goûters sont fournis l’après-midi)
+  - content: "* Picnic and snacks (Note: during winter afternoon snacks are provided)\n*
+      Diapers, wipes or cotton pads, change of clothes\n* Comfortable shoes depending
+      on the activity\n\n  *Norma Kids does not provide anything, except drinking
+      water (tap water).*"
+    title: 'What parents need to plan for:'
+    type: attention
+  - content: '* Registration form to be completed (including health form)
 
-        * Couches, lingettes ou cotons, change de vêtements
+      * Photocopy of vaccinations
 
-        * Chaussures confortables selon l’activité
-
-          *Norma Kids ne fournit rien, sauf de l’eau potable (eau du robinet).*
-    - type: warning
-      title: Inscription
-      content: |-
-        * Formulaire d’inscription à compléter (incluant le formulaire santé)
-        * Photocopie des vaccins
-        * Photocopie de la carte d’identité de l’enfant ou du livret de famille
-    - type: info
-      title: "☀️ Été :"
-      content: |-
-        * *Enfants âgés de 3 à 12 ans*
-
-        * *16 places pour les enfants de moins de 6 ans*
-
-        * *36 places pour les enfants de 6 ans et plus*
-
-        * *🍴 Repas uniquement si l'enfant reste toute la journée*
-    - type: info
-      title: "❄️ Hiver :"
-      content: |-
-        * *Garde des enfants de 3 mois à 5 ans*
-
-        * *Micro-crèche avec 12 places*
-
-        * *Repas uniquement :*
-
-          * *Pendant les vacances scolaires : tous les jours*
-
-          * *En dehors des vacances : uniquement les mardis et jeudis*
+      * Photocopy of the child''s identity card or family record book'
+    title: Registration
+    type: warning
+  - content: "\n\n\n* *Children aged 3 to 12*\n\n* *16 places for children under 6*\n\n*
+      *36 places for children aged 6 and over*\n\n* *\U0001F374 Meal times only if
+      the child stays for the whole day*"
+    title: '☀️ Summer:'
+    type: info
+  - content: "\n\n\n* *Care for children aged 3 months to 5 years*\n\n* *Micro-nursery
+      with 12 places*\n\n* *Meal times only:*\n\n  * *During school holidays: every
+      day*\n  * *Outside of holidays: Tuesdays and Thursdays only*"
+    title: '❄️ Winter:'
+    type: info
   openstreet_map:
     enable: true
     latitude: 45.200866
     longitude: 6.696278
     zoom: 15
-  logo: /images/activities/norma-kids/norma-kids-logo.png
-  name: Norma Kids
-  contact_form_action: none
-  gallery: []
-  image: /images/activities/norma-kids/norma-kids-1.jpg
-  description: >-
-    Chez NormaKids, nous mettons tout en œuvre pour offrir aux familles un service d’accueil de qualité, sécurisé et attentif aux besoins de chaque enfant. Que ce soit pendant les vacances scolaires ou en dehors, notre structure est ouverte toute l’année pour accompagner les enfants de tous âges dans un environnement chaleureux, stimulant et rassurant.
-
-    Pensé pour s’adapter au rythme de chaque enfant, NormaKids propose une variété d’activités ludiques et pédagogiques, réparties par tranche d’âge afin de garantir à chacun une expérience enrichissante et adaptée à son développement. Jeux en plein air, ateliers créatifs, découvertes sensorielles, activités sportives et temps calmes : chaque journée est soigneusement organisée pour allier plaisir, apprentissage et bien-être.
-
-    Nos équipes sont composées de professionnels qualifiés, passionnés par le monde de l’enfance, formés pour accompagner chaque enfant avec bienveillance, attention et respect. Leur mission : offrir un cadre structurant et épanouissant, propice à la découverte, la socialisation et l’autonomie.
-
-    Que ce soit en été ou en hiver, à la journée ou à la demi-journée, NormaKids simplifie le quotidien des parents tout en garantissant aux enfants des souvenirs inoubliables. Parce que leur bien-être est notre priorité, confiez-nous vos enfants en toute sérénité !
-
 ---

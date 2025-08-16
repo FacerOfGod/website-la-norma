@@ -1,7 +1,7 @@
 ---
-title: Groupe de 5 Personnes
-id: nz5
 group: Norma Zen
+id: nz5
+info: Payment on site. ⚠️ **THE PRICE IS PER PERSON**
 price: 24
-info: Règlement sur place.   ⚠️**LE PRIX EST PAR PERSONNE**
+title: Group of 5 People
 ---

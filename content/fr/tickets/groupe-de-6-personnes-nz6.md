@@ -1,7 +1,7 @@
 ---
-title: Groupe de 6 Personnes
-id: nz6
 group: Norma Zen
+id: nz6
+info: Payment on site. ⚠️ **THE PRICE IS PER PERSON**
 price: 20
-info: Règlement sur place.   ⚠️**LE PRIX EST PAR PERSONNE**
+title: Group of 6 People
 ---

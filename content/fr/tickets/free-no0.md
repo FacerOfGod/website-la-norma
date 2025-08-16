@@ -1,8 +1,8 @@
 ---
-title: Gratuit
-id: no0
 group: Norma O’
+id: no0
+info: Free admission upon presentation of the La Norma Station Pass. Free for children
+  born in 2020 and after.
 price: 0
-info: Entrée gratuite sur présentation du La Norma Station Pass. Gratuit pour les
-  enfants nés en 2020 et après.
+title: Free
 ---

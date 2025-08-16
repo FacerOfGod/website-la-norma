@@ -1,7 +1,7 @@
 ---
-title: Groupe de 4 Personnes
-id: nz4
 group: Norma Zen
+id: nz4
+info: Payment on site. ⚠️ **THE PRICE IS PER PERSON**
 price: 30
-info: Règlement sur place.   ⚠️**LE PRIX EST PAR PERSONNE**
+title: Group of 4 People
 ---

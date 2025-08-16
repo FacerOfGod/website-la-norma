@@ -1,7 +1,7 @@
 ---
-title: Groupe de 3 Personnes
-id: nz3
 group: Norma Zen
+id: nz3
+info: Payment on site. ⚠️ **THE PRICE IS PER PERSON**
 price: 40
-info: Règlement sur place.  ⚠️ **LE PRIX EST PAR PERSONNE**
+title: Group of 3 People
 ---
