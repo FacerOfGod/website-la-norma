@@ -104,8 +104,7 @@ jobs:
 
       - name: Zip public folder
         run: |
-          cd o2switch
-          zip -r ../site.zip .
+          zip -r site.zip  o2switch
           cd ..
 
 
