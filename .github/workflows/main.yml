@@ -92,6 +92,9 @@ jobs:
         uses: actions/deploy-pages@v4.0.5
 
   deploy-o2switch:
+    environment:
+      name: o2switch
+      url: ${{ steps.set-url.outputs.o2switch_url }}
     runs-on: ubuntu-24.04
     needs: build
     steps:
