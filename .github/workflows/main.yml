@@ -63,8 +63,9 @@ jobs:
         run: npm run build
 
       - name: Upload artifact Github pages
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
+          name: github-pages
           path: ./public
 
       - name: Rebuild site for o2switch with correct baseURL
