@@ -89,5 +89,5 @@ jobs:
           server: ${{ secrets.O2SWITCH_HOST }}
           username: ${{ secrets.O2SWITCH_USER }}
           password: ${{ secrets.O2SWITCH_PASSWORD }}
-          local-dir: ./public
+          local-dir: ./public/
           server-dir: ${{ secrets.O2SWITCH_PATH }}
