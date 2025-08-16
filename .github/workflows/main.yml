@@ -80,7 +80,7 @@ jobs:
 
 
   # Deployment jobs
-  deploy:
+  deploy-github:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -119,3 +119,8 @@ jobs:
           password: ${{ secrets.O2SWITCH_PASSWORD }}
           local-dir: ./test/
           server-dir: ${{ secrets.O2SWITCH_PATH }}
+      
+      - name: Set o2switch URL
+        id: set-url
+        run: |
+          echo "o2switch_url=${O2SWITCH_BASEURL}" >> $GITHUB_OUTPUT
