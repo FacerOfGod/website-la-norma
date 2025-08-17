@@ -10,8 +10,10 @@ event:
   gallery: null
   image: images/normakids-1.jpg
   logo: images/normakids-logo.png
-  name: Bouncy Castle
+  name: Kids
   tags:
   - Event
   - Kids
 ---
+
+|||Bienvenue à Norma Kids, l'ultime terrain de jeu de montagne où la curiosité rencontre l'aventure ! Spécialement conçu pour les enfants de 3 à 12 ans, Norma Kids transforme la magie des Alpes en un pays de rires, d'explorations et de surprises enneigées (ou ensoleillées !). Ceci est un test||DEEPL_SEPARATOR|||images/normakids-1.jpg||DEEPL_SEPARATOR|||Event

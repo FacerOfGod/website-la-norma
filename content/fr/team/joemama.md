@@ -1,14 +1,14 @@
 ---
-description: Voici la méta-description
+description: '|github'
 email: johndoe@email.com
-image: /images/avatar.png
+image: /images/avatar.png||DEEPL_SEPARATOR|||c'est la méta description
 social:
-- icon: fa-brands fa-github
-  link: https://github.com
-  name: github
-- icon: fa-brands fa-twitter
+- icon: https://github.com||DEEPL_SEPARATOR||twitter
+  link: fa-brands fa-twitter||DEEPL_SEPARATOR|||https://twitter.com||DEEPL_SEPARATOR|||linkedin
+  name: '|fa-brands fa-github'
+- icon: https://linkedin.com.
   link: https://twitter.com
-  name: twitter
+  name: fa-brands fa-linkedin
 - icon: fa-brands fa-linkedin
   link: https://linkedin.com
   name: linkedin

@@ -1,5 +1,7 @@
 ---
 description: W
-layout: informations_pratiques
-title: Informations pratiques
+layout: practical_information
+title: W
 ---
+
+|||Informations pratiques||DEEPL_SEPARATOR|||Informations pratiques||DEEPL_SEPARATOR|||Informations pratiques

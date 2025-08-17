@@ -1,4 +1,6 @@
 ---
 NoCMS: true
-title: L'équipe
+title: Team
 ---
+
+|||Équipe de travail de la Commission européenne

@@ -1,10 +1,10 @@
 ---
-description: Voici la méta-description
+description: this is meta description
 draft: false
 image: images/testimony/about-creators.jpg
-layout: à propos de
+layout: about
 meta_title: À propos du fondateur
-title: Kneipe 80
+title: à propos de
 ---
 
 Le festival culturel de Munich "Zoozie'z" se lance en février dans la gastronomie sous le nom de "Kneipe 80". La Brasserie Tresznjewski, déjà en place, servira de cadre à ce projet de pop-up qui n'en est encore qu'à ses débuts.
@@ -15,9 +15,9 @@ Comme dans les meilleurs moments de la vie culturelle, le 1er février, à Daydr
 
 Uebelherr sait ce qu'il dit. En outre, il a créé Zoozie'z il y a 15 ans en collaboration avec Michi Kern et Simi Berst. 2015 sagte das Kultlokal im Glockenbachviertel dann leise Servus.
 
-Pour ce come-back, les partenaires voient dans l'expérience du passé une perspective intéressante pour l'avenir et investissent dès lors dans les outils numériques dans leur équipe, leurs produits et l'atmosphère de leur logement.
+Pour ce come-back, les partenaires voient dans l'expérience du passé une perspective intéressante pour l'avenir et investissent dès lors dans les outils numériques au sein de leur équipe, dans leurs produits et dans l'atmosphère de leur logement.
 
 
 "Il n'y aura pas de site web ni de service en ligne", explique M. Uebelherr. "Les jeunes doivent s'en débarrasser - ou, comme autrefois, s'en débarrasser. Einziges Zugeständnis an die moderne Kommunikation : ein Instagram-Kanal.
 
-Le nom savoureux du projet lancé il y a un mois s'inscrit dans le cadre d'une idée originale. "Die 'Kneipe 80' is kein Restaurant, keine Bar, kein Café, sondern tatsächlich einfach eine Kneipe im Stil der 80er-Jahre", erläutert Markus Bauer. "Il s'agit d'un concept qui a beaucoup de succès et qui peut être utilisé à bon escient. Nous nous efforcerons, avec une grande satisfaction et une énergie positive, de faire en sorte que la charge soit réduite".
+Le nom savoureux du projet lancé il y a un mois s'inscrit dans le cadre d'une idée originale. "Die 'Kneipe 80' is kein Restaurant, keine Bar, kein Café, sondern tatsächlich einfach eine Kneipe im Stil der 80er-Jahre", erläutert Markus Bauer. "Il s'agit d'un concept qui a beaucoup de succès et qui peut être utilisé à bon escient. Nous nous efforcerons de faire en sorte que l'énergie positive et la bonne humeur soient au rendez-vous, afin que l'argent ne s'envole pas."|||DEPL_SEPARATOR||Kneipe 80|||DEPL_SEPARATOR|||À propos du fondateur|||DEPL_SEPARATOR|||c'est la méta description|||DEPL_SEPARATOR|||images/testimony/about-creators.jpg

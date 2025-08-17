@@ -1,4 +1,6 @@
 ---
 NoCMS: true
-title: Actualités
+title: News
 ---
+
+|||Nouvelles de l'Union européenne

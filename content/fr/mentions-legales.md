@@ -1,9 +1,9 @@
 ---
 date: 2025-07-11 12:00:00+00:00
 draft: false
-image: aucun
+image: mentions-legales
 layout: mentions-legales
-title: Mentions Légales
+title: none
 ---
 
 **Ce site est édité par :** CONFORT MEDICAL 68
@@ -30,4 +30,4 @@ title: Mentions Légales
 
 **Mentions légales spécifiques :**
 
-**Directeur de rédaction et de publication :** CONFORT MEDICAL 68
+**Directeur de rédaction et de publication :** CONFORT MEDICAL 68||DEEPL_SEPARATOR|||Mentions Légales
