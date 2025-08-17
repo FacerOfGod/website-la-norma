@@ -1,8 +1,10 @@
 import os
+import glob
 import frontmatter
 import deepl
 
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+CHANGED_FILES = os.getenv("CHANGED_FILES", "").splitlines()
 
 SOURCE_LANG = "EN"
 TARGET_LANG = "FR"
@@ -13,6 +15,7 @@ EXCLUDED_FIELDS = {"images", "gallery", "logo"}
 SEPARATOR = "|||DEEPL_SEPARATOR|||"
 
 translator = deepl.Translator(DEEPL_API_KEY)
+
 
 def collect_strings(value):
     strings = []
@@ -28,47 +31,65 @@ def collect_strings(value):
             strings.extend(collect_strings(item))
     return strings
 
+
 def apply_translations(value, translations):
     if isinstance(value, str):
         if value.strip():
-            return translations.pop(0)
+            if translations:
+                return translations.pop(0)
+            else:
+                return value  # fallback to original if no translation left
         return value
     elif isinstance(value, dict):
-        return {k: (v if k in EXCLUDED_FIELDS else apply_translations(v, translations)) for k, v in value.items()}
+        return {
+            k: (v if k in EXCLUDED_FIELDS else apply_translations(v, translations))
+            for k, v in value.items()
+        }
     elif isinstance(value, list):
         return [apply_translations(item, translations) for item in value]
     else:
         return value
 
-for root, _, files in os.walk(SOURCE_DIR):
-    for file in files:
-        if file.endswith(".md"):
-            src_path = os.path.join(root, file)
-            rel_path = os.path.relpath(src_path, SOURCE_DIR)
-            translated_path = os.path.join(TARGET_DIR, rel_path)
 
-            post = frontmatter.load(src_path)
-            print(f"🔁 Translating: {src_path}")
 
-            strings_to_translate = [post.content] + collect_strings(post.metadata)
+# Decide which files to process
+if CHANGED_FILES:
+    files_to_process = [
+        f for f in CHANGED_FILES if f.startswith(SOURCE_DIR) and f.endswith(".md")
+    ]
+else:
+    files_to_process = glob.glob(f"{SOURCE_DIR}/**/*.md", recursive=True)
 
-            if strings_to_translate:
-                combined_text = SEPARATOR.join(strings_to_translate)
-                translated_combined = translator.translate_text(
-                    combined_text, source_lang=SOURCE_LANG, target_lang=TARGET_LANG
-                ).text
-                translated_texts = translated_combined.split(SEPARATOR)
 
-                translated_content = translated_texts.pop(0)
-                translated_metadata = apply_translations(post.metadata, translated_texts)
-            else:
-                translated_content = post.content
-                translated_metadata = post.metadata
+for file in files_to_process:
+    src_path = file
+    rel_path = os.path.relpath(src_path, SOURCE_DIR)
+    translated_path = os.path.join(TARGET_DIR, rel_path)
 
-            new_post = frontmatter.Post(translated_content, **translated_metadata)
+    post = frontmatter.load(src_path)
+    print(f"🔁 Translating: {src_path}")
 
-            os.makedirs(os.path.dirname(translated_path), exist_ok=True)
-            with open(translated_path, "wb") as f:
-                frontmatter.dump(new_post, f)
+    strings_to_translate = [post.content] + collect_strings(post.metadata)
 
-            print(f"✅ Saved: {translated_path}")
+    if strings_to_translate:
+        # Join strings with a unique separator
+        combined_text = SEPARATOR.join(strings_to_translate)
+        translated_combined = translator.translate_text(
+            combined_text, source_lang=SOURCE_LANG, target_lang=TARGET_LANG
+        ).text
+        translated_texts = translated_combined.split(SEPARATOR)
+
+        # First string is content
+        translated_content = translated_texts.pop(0)
+        translated_metadata = apply_translations(post.metadata, translated_texts)
+    else:
+        translated_content = post.content
+        translated_metadata = post.metadata
+
+    new_post = frontmatter.Post(translated_content, **translated_metadata)
+
+    os.makedirs(os.path.dirname(translated_path), exist_ok=True)
+    with open(translated_path, "wb") as f:
+        frontmatter.dump(new_post, f)
+
+    print(f"✅ Saved: {translated_path}")

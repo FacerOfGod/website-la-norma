@@ -1,5 +1,4 @@
 import os
-import glob
 import frontmatter
 import deepl
 
@@ -16,7 +15,6 @@ SEPARATOR = "|||DEEPL_SEPARATOR|||"
 
 translator = deepl.Translator(DEEPL_API_KEY)
 
-
 def collect_strings(value):
     strings = []
     if isinstance(value, str):
@@ -31,33 +29,22 @@ def collect_strings(value):
             strings.extend(collect_strings(item))
     return strings
 
-
 def apply_translations(value, translations):
     if isinstance(value, str):
         if value.strip():
             return translations.pop(0)
         return value
     elif isinstance(value, dict):
-        return {
-            k: (v if k in EXCLUDED_FIELDS else apply_translations(v, translations))
-            for k, v in value.items()
-        }
+        return {k: (v if k in EXCLUDED_FIELDS else apply_translations(v, translations)) for k, v in value.items()}
     elif isinstance(value, list):
         return [apply_translations(item, translations) for item in value]
     else:
         return value
 
+for file in CHANGED_FILES:
+    if not file.startswith(SOURCE_DIR) or not file.endswith(".md"):
+        continue
 
-# Decide which files to process
-if CHANGED_FILES:
-    files_to_process = [
-        f for f in CHANGED_FILES if f.startswith(SOURCE_DIR) and f.endswith(".md")
-    ]
-else:
-    files_to_process = glob.glob(f"{SOURCE_DIR}/**/*.md", recursive=True)
-
-
-for file in files_to_process:
     src_path = file
     rel_path = os.path.relpath(src_path, SOURCE_DIR)
     translated_path = os.path.join(TARGET_DIR, rel_path)
@@ -70,9 +57,7 @@ for file in files_to_process:
     if strings_to_translate:
         # Join strings with a unique separator
         combined_text = SEPARATOR.join(strings_to_translate)
-        translated_combined = translator.translate_text(
-            combined_text, source_lang=SOURCE_LANG, target_lang=TARGET_LANG
-        ).text
+        translated_combined = translator.translate_text(combined_text, source_lang=SOURCE_LANG, target_lang=TARGET_LANG).text
         translated_texts = translated_combined.split(SEPARATOR)
 
         # First string is content
