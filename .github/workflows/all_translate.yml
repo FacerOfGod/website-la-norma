@@ -1,0 +1,38 @@
+name: Translate Markdown
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 📦 Install dependencies
+        run: pip install python-frontmatter deepl
+
+      - name: 🌍 Run translation script
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API}}
+        run: python .github/scripts/all_translate.py
+
+      - name: 🚀 Commit and push translations
+        run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
+            git add -A 
+            git diff --cached --quiet || git commit -m "🈯 Auto-translation via DeepL"
+            git push
+        continue-on-error: true
