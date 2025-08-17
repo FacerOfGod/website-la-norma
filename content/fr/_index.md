@@ -1,6 +1,6 @@
 ---
 banner:
-  content: "Located in the heart of the French Alpss, at an altitude of 1,350 meters,
+  content: "Located in the heart of the French Alps, at an altitude of 1,350 meters,
     La Norma is a charming ski and mountain resort in the Maurienne Valley, Savoie.
     Designed with families in mind, La Norma is the perfect place to enjoy nature,
     fun, and quality time—whether you visit in winter or summer.\n\n❄️ **Winter Magic:**

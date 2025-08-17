@@ -1,4 +1,4 @@
 ---
-title: Activities
+title: Activités
 visibleInCMS: false
 ---

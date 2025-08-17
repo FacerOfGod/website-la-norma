@@ -1,4 +1,4 @@
 ---
 NoCMS: true
-title: Team
+title: L'équipe
 ---

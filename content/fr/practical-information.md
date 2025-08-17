@@ -1,5 +1,5 @@
 ---
 description: W
-layout: practical_information
-title: Practical Information
+layout: informations_pratiques
+title: Informations pratiques
 ---

@@ -1,4 +1,4 @@
 ---
 NoCMS: true
-title: News
+title: Actualités
 ---

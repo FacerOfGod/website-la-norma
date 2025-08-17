@@ -1,5 +1,5 @@
 ---
-description: this is meta description
+description: Voici la méta-description
 email: johndoe@email.com
 image: /images/avatar.png
 social:

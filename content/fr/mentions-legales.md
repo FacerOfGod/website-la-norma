@@ -1,14 +1,14 @@
 ---
 date: 2025-07-11 12:00:00+00:00
 draft: false
-image: none
+image: aucun
 layout: mentions-legales
-title: Mentions Légals
+title: Mentions Légales
 ---
 
-**Ce site est édité par :**  CONFORT MEDICAL 68
+**Ce site est édité par :** CONFORT MEDICAL 68
 
-**Capital :** 10 000,00 €  
+**Capital :** 10 000,00 €
 
 **Adresse :** 2 RUE DU LAURIER 68700 CERNAY FRANCE
 
@@ -16,13 +16,13 @@ title: Mentions Légals
 
 **Téléphone :** 03 67 26 20 20
 
-**N° Registre du Commerce ou Répertoire des métiers :**  8559B
+**N° Registre du Commerce ou Répertoire des métiers :** 8559B
 
-**N° SIRET de l’établissement :** 81949633200027
+**N° SIRET de l'établissement :** 81949633200027
 
-**N° d’assujettissement à la TVA :** FR49819496332
+**N° d'assujettissement à la TVA :** FR49819496332
 
-**Titre professionnel–Autorisation :**
+**Titre professionnel-Autorisation :**
 
 **Référence aux règles professionnelles applicables :**
 
