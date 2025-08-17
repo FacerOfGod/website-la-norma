@@ -1,4 +1,5 @@
 import os
+import glob
 import frontmatter
 import deepl
 
@@ -11,8 +12,10 @@ TARGET_SUFFIX = TARGET_LANG.lower()
 SOURCE_DIR = "content/english"
 TARGET_DIR = f"content/{TARGET_SUFFIX}"
 EXCLUDED_FIELDS = {"images", "gallery", "logo"}
+SEPARATOR = "|||DEEPL_SEPARATOR|||"
 
 translator = deepl.Translator(DEEPL_API_KEY)
+
 
 def collect_strings(value):
     strings = []
@@ -28,22 +31,33 @@ def collect_strings(value):
             strings.extend(collect_strings(item))
     return strings
 
+
 def apply_translations(value, translations):
     if isinstance(value, str):
         if value.strip():
             return translations.pop(0)
         return value
     elif isinstance(value, dict):
-        return {k: (v if k in EXCLUDED_FIELDS else apply_translations(v, translations)) for k, v in value.items()}
+        return {
+            k: (v if k in EXCLUDED_FIELDS else apply_translations(v, translations))
+            for k, v in value.items()
+        }
     elif isinstance(value, list):
         return [apply_translations(item, translations) for item in value]
     else:
         return value
 
-for file in CHANGED_FILES:
-    if not file.startswith(SOURCE_DIR) or not file.endswith(".md"):
-        continue
 
+# Decide which files to process
+if CHANGED_FILES:
+    files_to_process = [
+        f for f in CHANGED_FILES if f.startswith(SOURCE_DIR) and f.endswith(".md")
+    ]
+else:
+    files_to_process = glob.glob(f"{SOURCE_DIR}/**/*.md", recursive=True)
+
+
+for file in files_to_process:
     src_path = file
     rel_path = os.path.relpath(src_path, SOURCE_DIR)
     translated_path = os.path.join(TARGET_DIR, rel_path)
@@ -54,25 +68,14 @@ for file in CHANGED_FILES:
     strings_to_translate = [post.content] + collect_strings(post.metadata)
 
     if strings_to_translate:
-        # Wrap each string in a non-translatable XML tag
-        wrapped = "".join([f"<x id='{i}'>{s}</x>" for i, s in enumerate(strings_to_translate)])
-
-        translated_wrapped = translator.translate_text(
-            wrapped,
-            source_lang=SOURCE_LANG,
-            target_lang=TARGET_LANG,
-            tag_handling="xml"
+        # Join strings with a unique separator
+        combined_text = SEPARATOR.join(strings_to_translate)
+        translated_combined = translator.translate_text(
+            combined_text, source_lang=SOURCE_LANG, target_lang=TARGET_LANG
         ).text
+        translated_texts = translated_combined.split(SEPARATOR)
 
-        # Extract translations back in order
-        import re
-        translated_texts = re.findall(r"<x id='\d+'>(.*?)</x>", translated_wrapped, flags=re.DOTALL)
-
-        if len(translated_texts) != len(strings_to_translate):
-            raise ValueError(
-                f"Mismatch: collected {len(strings_to_translate)} strings but got {len(translated_texts)} translations"
-            )
-
+        # First string is content
         translated_content = translated_texts.pop(0)
         translated_metadata = apply_translations(post.metadata, translated_texts)
     else:
