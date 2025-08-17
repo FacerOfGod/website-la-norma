@@ -1,9 +1,7 @@
 ---
-group: Norma O’
+group: Norma O'
 id: no10
-info: 'Access to La Norma swimming area with 10 entries '
+info: Accès à la zone de baignade La Norma avec 10 entrées
 price: 50
-title: 10 Entries
+title: 10 Entrées
 ---
-
-|||Accès à la zone de baignade La Norma avec 10 entrées.

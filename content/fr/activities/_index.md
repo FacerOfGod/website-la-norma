@@ -1,6 +1,4 @@
 ---
-title: Activities
+title: Activités
 visibleInCMS: false
 ---
-
-|||Activités de l'entreprise

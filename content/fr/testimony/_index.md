@@ -1,6 +1,4 @@
 ---
 NoCMS: true
-title: Testimony
+title: Témoignage
 ---
-
-|||Le témoignage d'une personne est un élément essentiel de l'évaluation.

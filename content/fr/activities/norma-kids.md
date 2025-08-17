@@ -26,45 +26,32 @@ activity:
     with complete peace of mind!'
   gallery: []
   gallery-image:
-  - 8:30 - 17:00
+  - test.jpg
   horaire:
   - entries:
-    - day: 8:30 - 17:00
-      hours: Mercredi
-    - day: 8:30 - 17 :00||DEEPL_SEPARATOR|||Jeudi
-      hours: 8:30 - 17:00||DEEPL_SEPARATOR|||Vendredi
-    - day: 8:30 - 17:00||DEEPL_SEPARATOR|||Hiver||DEEPL_SEPARATOR|||Lundi
-      hours: 9:00 - 17 :00||DEEPL_SEPARATOR|||Mardi
-    - day: 9:00 - 17:00
-      hours: Mercredi
-    - day: 9:00 - 17:00
-      hours: Jeudi
-    window: Mardi
+    - day: Monday
+      hours: 8:30 - 17:00
+    - day: Tuesday
+      hours: 8:30 - 17:00
+    - day: Wednesday
+      hours: 8:30 - 17:00
+    - day: Thursday
+      hours: 8:30 - 17:00
+    - day: Friday
+      hours: 8:30 - 17:00
+    window: Summer
   - entries:
-    - day: '|9:00 - 17:00'
-      hours: 'Qu''est-ce que les parents doivent prévoir:'
-    - day: attention
-      hours: "* Pique-nique et collations (Note : durant l'hiver, les collations de
-        l'après-midi sont fournies).\n* Couches, lingettes ou cotons-tiges, vêtements
-        de rechange\n* Chaussures confortables en fonction de l'activité\n\n  *Norma
-        Kids ne fournit rien, sauf de l'eau potable (eau du robinet).*"
-    - day: avertissement
-      hours: '|Inscription'
-    - day: '* Formulaire d''inscription à remplir (y compris la fiche sanitaire)
-
-        * Photocopie des vaccinations
-
-        * Photocopie de la carte d''identité de l''enfant ou du livret de famille||DEEPL_SEPARATOR|||info'
-      hours: "☀️ Summer:||DEEPL_SEPARATOR||||\n\n\n*Enfants de 3 à 12 ans*\n\n*16
-        places pour les enfants de moins de 6 ans\n\n* 36 places pour les enfants
-        âgés de 6 ans et plus\n\n*\U0001F374 Heures de repas seulement si l'enfant
-        reste toute la journée*||DEEPL_SEPARATOR|||info"
-    - day: '|❄️ Winter:'
-      hours: "\n\n\n*Accueil des enfants de 3 mois à 5 ans*\n\n*Micro-crèche de 12
-        places*\n\n*Heures de repas uniquement : *\n\n  *Pendant les vacances scolaires
-        : tous les jours*\n  *En dehors des vacances : Les mardis et jeudis uniquement*||DEEPL_SEPARATOR|||Norma
-        Kids"
-    window: 9:00 - 17 :00||DEEPL_SEPARATOR|||Vendredi
+    - day: Monday
+      hours: 9:00 - 17:00
+    - day: Tuesday
+      hours: 9:00 - 17:00
+    - day: Wednesday
+      hours: 9:00 - 17:00
+    - day: Thursday
+      hours: 9:00 - 17:00
+    - day: Friday
+      hours: 9:00 - 17:00
+    window: Winter
   image: /images/activities/norma-kids/norma-kids-1.jpg
   logo: /images/activities/norma-kids/norma-kids-logo.png
   name: Norma Kids
@@ -73,33 +60,8 @@ activity:
       Diapers, wipes or cotton pads, change of clothes\n* Comfortable shoes depending
       on the activity\n\n  *Norma Kids does not provide anything, except drinking
       water (tap water).*"
-    title: none
-    type: '/images/activities/norma-kids/norma-kids-1.jpg|||DEEPL_SEPARATOR||Au sein
-      de NormaKids, nous mettons tout en œuvre pour offrir aux familles un service
-      de garde de qualité, sûr et attentif aux besoins de chaque enfant. Que ce soit
-      pendant les vacances scolaires ou en dehors, notre structure est ouverte toute
-      l''année pour accompagner les enfants de tous âges dans un environnement chaleureux,
-      stimulant et rassurant.
-
-
-      Conçue pour s''adapter au rythme de chaque enfant, NormaKids propose une variété
-      d''activités ludiques et éducatives, réparties par groupes d''âge afin de garantir
-      à chaque enfant une expérience enrichissante et adaptée à son développement.
-      Jeux de plein air, ateliers créatifs, découvertes sensorielles, activités sportives,
-      temps calmes : chaque journée est soigneusement organisée pour allier plaisir,
-      apprentissage et bien-être.
-
-
-      Nos équipes sont composées de professionnels qualifiés, passionnés par le monde
-      de l''enfance et formés pour accompagner chaque enfant avec bienveillance, attention
-      et respect. Leur mission : offrir un environnement structuré et épanouissant,
-      propice à la découverte, à la socialisation et à l''autonomie.
-
-
-      Eté comme hiver, à la journée ou à la demi-journée, NormaKids est là pour simplifier
-      le quotidien des parents tout en garantissant aux enfants des souvenirs inoubliables.
-      Parce que leur bien-être est notre priorité, vous pouvez nous confier vos enfants
-      en toute sérénité !'
+    title: 'What parents need to plan for:'
+    type: attention
   - content: '* Registration form to be completed (including health form)
 
       * Photocopy of vaccinations
@@ -123,5 +85,3 @@ activity:
     longitude: 6.696278
     zoom: 15
 ---
-
-||DEEPL_SEPARATOR|||test.jpg||DEEPL_SEPARATOR|||Été||DEEPL_SEPARATOR|||Lundi

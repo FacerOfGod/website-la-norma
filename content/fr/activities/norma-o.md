@@ -1,6 +1,15 @@
 ---
 activity:
-  description: 11:15 - 18:30||DEEPL_SEPARATOR|||Samedi
+  description: 'Each summer, Norma O’ welcomes you for a refreshing escape in a calm
+    and natural setting. Nestled in the heart of the mountains, this peaceful spot
+    is perfect for families, friends, or anyone looking to unwind after a day of hiking
+    or outdoor adventures.
+
+
+    Take a dip in the natural water pool, surrounded by greenery and the soothing
+    silence of alpine landscapes. Whether you''re cooling off, relaxing, or simply
+    enjoying quality time with loved ones, Norma O’ offers the perfect summer break
+    in the fresh mountain air.'
   horaire:
   - entries:
     - day: Monday
@@ -17,26 +26,14 @@ activity:
       hours: 11:15 - 18:30
     - day: Sunday
       hours: 11:15 - 18:30
-    window: 11 :15 - 18:30||DEEPL_SEPARATOR|||Dimanche||DEEPL_SEPARATOR|||11:15 -
-      18:30||DEEPL_SEPARATOR|||/images/activités/norma-o/plan-eau.jpg
+    window: Juillet - Août
   image: /images/activities/norma-o/plan-eau.jpg
   logo: /images/activities/norma-o/norma-zen-logo.png
-  name: 11 :15 - 18:30||DEEPL_SEPARATOR|||Vendredi
+  name: Norma O’
   notifications:
-  - content: Norma O'
-    title: 'Chaque été, Norma O'' vous accueille pour une escapade rafraîchissante
-      dans un cadre calme et naturel. Niché au cœur des montagnes, cet endroit paisible
-      est parfait pour les familles, les amis ou toute personne souhaitant se détendre
-      après une journée de randonnée ou d''aventures en plein air.
-
-
-      Plongez dans la piscine d''eau naturelle, entourée de verdure et du silence
-      apaisant des paysages alpins. Que vous souhaitiez vous rafraîchir, vous détendre
-      ou simplement passer du bon temps avec vos proches, Norma O'' vous offre une
-      pause estivale parfaite à l''air frais de la montagne.15 - 18:30||DEEPL_SEPARATOR|||Mercredi||DEEPL_SEPARATOR|||11:15
-      - 18:30||DEEPL_SEPARATOR|||Jeudi'
-    type: Gratuit pour les enfants de moins de 5 ans||DEEPL_SEPARATOR|||Gratuit pour
-      certains
+  - content: Free for children under 5 years old
+    title: Free for some
+    type: success
   openstreet_map:
     enable: true
     latitude: 45.197969
@@ -44,5 +41,3 @@ activity:
     zoom: 15
   visibleInCMS: true
 ---
-
-|||Les enfants de moins de 5 ans sont accueillis gratuitement||DEEPL_SEPARATOR|||Succès

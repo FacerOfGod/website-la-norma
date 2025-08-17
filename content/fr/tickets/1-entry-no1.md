@@ -1,9 +1,7 @@
 ---
-group: '|Accès à la zone de baignade de La Norma'
-id: '|Norma O'''
-info: Access to La Norma swimming area
+group: Norma O'
+id: no1
+info: Accès à la zone de baignade de La Norma
 price: 6
-title: no1
+title: 1 Entrée
 ---
-
-||DEEPL_SEPARATOR|||1 Entrée

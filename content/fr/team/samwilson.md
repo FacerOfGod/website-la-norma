@@ -1,14 +1,14 @@
 ---
-description: '|github'
+description: Voici la méta-description
 email: samwilson@email.com
-image: /images/avatar.png||DEEPL_SEPARATOR|||c'est la meta description
+image: /images/avatar.png
 social:
-- icon: https://github.com||DEEPL_SEPARATOR||twitter
-  link: fa-brands fa-twitter||DEEPL_SEPARATOR|||https://twitter.com||DEEPL_SEPARATOR|||linkedin
-  name: '|fa-brands fa-github'
-- icon: https://linkedin.com.
+- icon: fa-brands fa-github
+  link: https://github.com
+  name: github
+- icon: fa-brands fa-twitter
   link: https://twitter.com
-  name: fa-brands fa-linkedin
+  name: twitter
 - icon: fa-brands fa-linkedin
   link: https://linkedin.com
   name: linkedin

@@ -1,9 +1,7 @@
 ---
 group: Norma Zen
 id: nz6
-info: Payment on site. ⚠️ **THE PRICE IS PER PERSON**
+info: Paiement sur place. ⚠️ **LE PRIX EST PAR PERSONNE**
 price: 20
-title: Group of 6 People
+title: Groupe de 6 personnes
 ---
-
-|||Le prix de l'hébergement est calculé en fonction du nombre de personnes, de leur âge et de leur situation géographique. ⚠️ **LE PRIX EST PAR PERSONNE**
