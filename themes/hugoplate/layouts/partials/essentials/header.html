@@ -1,231 +1,144 @@
-<header class="header {{ if site.Params.navbar_fixed }}top-0{{ end }} z-30">
-  <nav class="navbar container flex items-center justify-between">
+<header
+  class="header {{ if site.Params.navbar_fixed }} top-0 {{ end }} z-80 animate-slide-down">
+  <nav class="navbar container flex items-center justify-between min-h-[80px]">
     <!-- logo -->
-    <div class="order-0">
-      <a class="navbar-brand block" href="{{ site.Home.RelPermalink }}">
+    <div class="order-0 animate-fade-in">
+      <a class="navbar-brand block transition-transform duration-300 hover:scale-110" href="{{ site.Home.RelPermalink }}">
         {{ partial "logo" }}
       </a>
     </div>
 
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label
-      for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark lg:order-1">
-      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+    <label for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark lg:order-1 transition-all duration-300 hover:scale-110 active:scale-95">
+      <svg id="show-button" class="h-6 fill-current block transition-all duration-300" viewBox="0 0 20 20">
         <title>Menu Open</title>
         <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
       </svg>
-      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+      <svg id="hide-button" class="h-6 fill-current hidden transition-all duration-300" viewBox="0 0 20 20">
         <title>Menu Close</title>
-        <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-          transform="rotate(45 10 10)"></polygon>
+        <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"></polygon>
       </svg>
     </label>
 
     <!-- main navbar -->
-    <ul
-      id="nav-menu"
-      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
-      {{ $currentPage := . }}
-      {{ range site.Menus.main }}
-        {{ $menuPage := site.GetPage .URL }}
-        {{ $menuURL := "" }}
-        {{ if $menuPage }}
-          {{ $menuURL = $menuPage.RelPermalink }}
-        {{ else }}
-          {{ $menuURL = .URL }}
-        {{ end }}
+    <div class="flex-1 flex justify-center lg:order-1">
+      <ul id="nav-menu"
+        class="navbar-nav order-3 hidden lg:flex items-center w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 animate-fade-in-delayed">
+        {{ $currentPage := . }}
+        {{ range $index, $item := site.Menus.main }}
+          {{ $menuPage := site.GetPage .URL }}
+          {{ $menuURL := "" }}
+          {{ if $menuPage }}
+            {{ $menuURL = $menuPage.RelPermalink }}
+          {{ else }}
+            {{ $menuURL = .URL }}
+          {{ end }}
+          {{ $currentPageURL := $currentPage.RelPermalink }}
+          {{ $active := eq $menuURL $currentPageURL }}
 
-        {{ $currentPageURL := $currentPage.RelPermalink }}
-        {{ $active := eq $menuURL $currentPageURL }}
-
-        {{ if .HasChildren }}
-          <li class="nav-item nav-dropdown group relative">
-            <a
-              class="nav-link parent-link
-              {{ if eq .Name "Activities" }}
-                {{ $activities := where site.RegularPages "Section" "activities" }}
-                {{ range $activities }}
-                  {{ if eq .Permalink $currentPage.Permalink }}active{{ end }}
-                {{ end }}
-              {{ else }}
+          {{ if .HasChildren }}
+            <li class="nav-item nav-dropdown group relative animate-nav-item" style="animation-delay: {{ mul $index 0.1 }}s;">
+              <a class="nav-link parent-link flex items-center transition-all duration-300 hover:scale-105 hover:text-primary {{ if $active }}active{{ end }}"
+                href="{{ if $menuPage }}{{ $menuPage.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">
+                {{ .Name }}
+                <svg class="h-4 w-4 fill-current transition-transform duration-300 group-hover:rotate-180" viewBox="0 0 20 20">
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </a>
+              <ul class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100 transition-all duration-300 transform lg:group-hover:scale-100 lg:scale-95">
                 {{ range .Children }}
                   {{ $childPage := site.GetPage .URL }}
-                  {{ $childURL := "" }}
-                  {{ if $childPage }}
-                    {{ $childURL = $childPage.RelPermalink }}
-                  {{ else }}
-                    {{ $childURL = .URL }}
-                  {{ end }}
-                  {{ if eq $childURL $currentPageURL }}active{{ end }}
-                {{ end }}
-              {{ end }}
-              inline-flex items-center"
-              href="{{ if findRE `^#` .URL }}
-                {{ if not $.IsHome }}
-                  {{ site.Home.RelPermalink }}
-                {{ end }}{{ .URL }}
-              {{ else }}
-                {{ if $menuPage }}
-                  {{ $menuPage.RelPermalink }}
-                {{ else }}
-                  {{ .URL }}
-                {{ end }}
-              {{ end }}">
-              {{ .Name }}
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </a>
-
-            <ul
-              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
-              {{ if or (eq .Name "Activities") (eq .Name "Activités") }}
-                {{ $activities := where site.RegularPages "Section" "activities" }}
-                {{ range $activities }}
-                  <li class="nav-dropdown-item">
-                    <a
-                      class="nav-dropdown-link text-dark {{ if eq .Permalink $currentPage.Permalink }}
-                        active
-                      {{ end }}"
-                      href="{{ .RelPermalink }}">
-                      {{ .Params.activity.name }}
-                    </a>
-                  </li>
-                {{ end }}
-              {{ else }}
-                {{ range .Children }}
-                  {{ $childPage := site.GetPage .URL }}
-                  {{ $childURL := "" }}
-                  {{ if $childPage }}
-                    {{ $childURL = $childPage.RelPermalink }}
-                  {{ else }}
-                    {{ $childURL = .URL }}
-                  {{ end }}
-                  {{ $activeChild := eq $childURL $currentPageURL }}
-                  <li class="nav-dropdown-item">
-                    <a
-                      class="nav-dropdown-link {{ if $activeChild }}
-                        active
-                      {{ end }}"
-                      {{ if findRE `^http` .URL }}
-                        target="_blank" rel="noopener"
-                      {{ end }}
-                      href="{{ if findRE `^#` .URL }}
-                        {{ if not $.IsHome }}
-                          {{ site.Home.RelPermalink }}
-                        {{ end }}{{ .URL }}
-                      {{ else }}
-                        {{ if $childPage }}
-                          {{ $childPage.RelPermalink }}
-                        {{ else }}
-                          {{ .URL }}
-                        {{ end }}
-                      {{ end }}">
+                  <li class="nav-dropdown-item animate-dropdown-item">
+                    <a class="nav-dropdown-link flex items-center transition-all duration-200 hover:translate-x-2 hover:text-primary {{ if eq $childPage.RelPermalink $currentPageURL }}active{{ end }}"
+                      href="{{ if $childPage }}{{ $childPage.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">
                       {{ .Name }}
                     </a>
                   </li>
                 {{ end }}
-              {{ end }}
-            </ul>
-          </li>
-        {{ else }}
-          <li class="nav-item">
-            <a
-              class="nav-link {{ if $active }}active{{ end }}"
-              {{ if findRE `^http` .URL }}
-                target="_blank" rel="noopener"
-              {{ end }}
-              href="{{ if findRE `^#` .URL }}
-                {{ if not $.IsHome }}
-                  {{ site.Home.RelPermalink }}
-                {{ end }}{{ .URL }}
-              {{ else }}
-                {{ if $menuPage }}
-                  {{ $menuPage.RelPermalink }}
-                {{ else }}
-                  {{ .URL }}
-                {{ end }}
-              {{ end }}">
-              {{ .Name }}
-            </a>
-          </li>
+              </ul>
+            </li>
+          {{ else }}
+            <li class="nav-item animate-nav-item" style="animation-delay: {{ mul $index 0.1 }}s;">
+              <a class="nav-link flex items-center transition-all duration-300 hover:scale-105 hover:text-primary relative {{ if $active }}active{{ end }}"
+                href="{{ if $menuPage }}{{ $menuPage.RelPermalink }}{{ else }}{{ .URL }}{{ end }}">
+                {{ .Name }}
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+          {{ end }}
         {{ end }}
-      {{ end }}
+      </ul>
+    </div>
 
-      {{ if site.Params.navigation_button.enable }}
-        <li class="mt-4 inline-block lg:hidden">
-          <a
-            class="btn btn-primary btn-sm"
-            href="{{ site.Params.navigation_button.link | relLangURL }}">
-            {{ site.Params.navigation_button.label }}
-          </a>
-        </li>
-      {{ end }}
-    </ul>
-
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+    <!-- right side -->
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0 animate-fade-in-right">
       {{ with site.Params.search }}
         {{ if .enable }}
-          <button
-            aria-label="search"
-            class="border-border text-text-dark hover:text-primary mr-5 inline-block border-r pr-5 text-xl cursor-pointer
-            {{ if not (or site.Params.navigation_button.enable site.Params.theme_switcher) }}
-              lg:border-r-0 lg:pr-0
-            {{ end }}"
+          <button aria-label="search"
+            class="border-border text-text-dark hover:text-primary mr-5 inline-block border-r pr-5 text-xl cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95"
             data-target="search-modal">
-            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-search transition-transform duration-300 hover:rotate-12"></i>
           </button>
         {{ end }}
       {{ end }}
 
-      {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 rounded") }}
+      {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 rounded transition-all duration-300 hover:scale-105") }}
 
       {{ if site.Params.navigation_button.enable }}
-        <a
-          href="{{ site.Params.navigation_button.link | relLangURL }}"
-          class="btn btn-primary btn-sm hidden lg:inline-block">
+        <a href="{{ site.Params.navigation_button.link | relLangURL }}"
+          class="btn btn-primary btn-sm hidden lg:inline-block transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
           {{ site.Params.navigation_button.label }}
         </a>
       {{ end }}
     </div>
   </nav>
 
-  <style>
-    .nav-dropdown-list {
-      display: none;
-    }
-    @media (min-width: 1024px) {
-      .nav-dropdown:hover > .nav-dropdown-list {
-        display: block !important;
-      }
-    }
-    @media (max-width: 1023px) {
-      li.nav-item.nav-dropdown.submenu-open > .nav-dropdown-list {
-        display: block !important;
-      }
-    }
-  </style>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const navToggle = document.getElementById("nav-toggle");
-      const parentLinks = document.querySelectorAll(".parent-link");
+      const navMenu = document.getElementById("nav-menu");
+      const dropdowns = document.querySelectorAll(".nav-dropdown > .parent-link");
 
-      parentLinks.forEach((link) => {
+      // Toggle mobile menu
+      navToggle.addEventListener("change", () => {
+        if (navToggle.checked) {
+          navMenu.classList.remove("hidden");
+        } else {
+          setTimeout(() => {
+            navMenu.classList.add("hidden");
+          }, 300);
+        }
+      });
+
+      // Mobile dropdown toggle
+      dropdowns.forEach(link => {
         link.addEventListener("click", (e) => {
-          if (navToggle.checked) {
+          if (window.innerWidth < 1024) {
             e.preventDefault();
-            const parentLi = link.closest("li.nav-item.nav-dropdown");
-            if (parentLi) {
-              parentLi.classList.toggle("submenu-open");
-            }
+            const parent = link.parentElement;
+            parent.classList.toggle("submenu-open");
           }
         });
       });
     });
   </script>
+
+  <style>
+        .nav-link-underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover .nav-link-underline,
+    .nav-link.active .nav-link-underline {
+      width: 100%;
+    }
+  </style>
 </header>

@@ -7,16 +7,16 @@
         muted
         loop
         playsinline
-        class="absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-1000">
+        class="absolute top-0 left-0 w-full h-full object-cover -z-10 transition-opacity duration-1000">
         <source src="{{ "videos/norma-loops-bg.mp4" | relURL }}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       <!-- Dark overlay with gradient -->
-      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/40 via-black/50 to-black/60 z-0"></div>
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/40 via-black/50 to-black/60 -z-10 "></div>
 
       <!-- Foreground Content -->
-      <div class="container relative z-20 animate-fade-in">
+      <div class="container relative -z-5 animate-fade-in">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
             <div class="border-[4px] border-[#8b5e3c] text-black rounded-4xl p-8.5 shadow-2xl backdrop-blur-lg bg-white/10 transition-all duration-500 hover:shadow-3xl hover:scale-105 hover:bg-white/15">

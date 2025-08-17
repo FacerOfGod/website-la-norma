@@ -23,6 +23,8 @@ jobs:
         run: pip install python-frontmatter requests
 
       - name: 🌍 Run translation script
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API }}
         run: python .github/scripts/translate.py
 
       - name: 🚀 Commit and push translations
