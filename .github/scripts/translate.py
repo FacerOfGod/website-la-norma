@@ -11,7 +11,6 @@ TARGET_SUFFIX = TARGET_LANG.lower()
 SOURCE_DIR = "content/english"
 TARGET_DIR = f"content/{TARGET_SUFFIX}"
 EXCLUDED_FIELDS = {"images", "gallery", "logo"}
-SEPARATOR = "|||DEEPL_SEPARATOR|||"
 
 translator = deepl.Translator(DEEPL_API_KEY)
 
@@ -55,12 +54,25 @@ for file in CHANGED_FILES:
     strings_to_translate = [post.content] + collect_strings(post.metadata)
 
     if strings_to_translate:
-        # Join strings with a unique separator
-        combined_text = SEPARATOR.join(strings_to_translate)
-        translated_combined = translator.translate_text(combined_text, source_lang=SOURCE_LANG, target_lang=TARGET_LANG).text
-        translated_texts = translated_combined.split(SEPARATOR)
+        # Wrap each string in a non-translatable XML tag
+        wrapped = "".join([f"<x id='{i}'>{s}</x>" for i, s in enumerate(strings_to_translate)])
 
-        # First string is content
+        translated_wrapped = translator.translate_text(
+            wrapped,
+            source_lang=SOURCE_LANG,
+            target_lang=TARGET_LANG,
+            tag_handling="xml"
+        ).text
+
+        # Extract translations back in order
+        import re
+        translated_texts = re.findall(r"<x id='\d+'>(.*?)</x>", translated_wrapped, flags=re.DOTALL)
+
+        if len(translated_texts) != len(strings_to_translate):
+            raise ValueError(
+                f"Mismatch: collected {len(strings_to_translate)} strings but got {len(translated_texts)} translations"
+            )
+
         translated_content = translated_texts.pop(0)
         translated_metadata = apply_translations(post.metadata, translated_texts)
     else:
