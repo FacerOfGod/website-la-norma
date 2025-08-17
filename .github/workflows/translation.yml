@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: 📦 Install dependencies
-        run: pip install python-frontmatter requests
+        run: pip install python-frontmatter deepl
 
       - name: 🌍 Run translation script
         env:
