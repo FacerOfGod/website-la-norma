@@ -1,4 +1,4 @@
-name: Translate Markdown
+name: All Translate
 
 on:
   workflow_dispatch:
