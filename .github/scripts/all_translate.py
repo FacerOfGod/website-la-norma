@@ -2,7 +2,7 @@ import os
 import frontmatter
 import deepl
 
-DEEPL_API_KEY = os.getenv("DEEPL_API")
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 
 SOURCE_LANG = "EN"
 TARGET_LANG = "FR"
