@@ -15,7 +15,7 @@ Comme dans les meilleurs moments de la vie culturelle, le 1er février, à Daydr
 
 Uebelherr sait ce qu'il dit. En outre, il a créé Zoozie'z il y a 15 ans en collaboration avec Michi Kern et Simi Berst. 2015 sagte das Kultlokal im Glockenbachviertel dann leise Servus.
 
-Pour ce come-back, les partenaires voient dans l'expérience du passé une perspective intéressante pour l'avenir et investissent dès lors dans les outils numériques au sein de leur équipe, dans leurs produits et dans l'atmosphère de leur logement.
+Pour ce come-back, les partenaires voient dans l'expérience du passé une perspective intéressante pour l'avenir et investissent dès lors dans les outils numériques dans leur équipe, leurs produits et l'atmosphère de leur logement.
 
 
 "Il n'y aura pas de site web ni de service en ligne", explique M. Uebelherr. "Les jeunes doivent s'en débarrasser - ou, comme autrefois, s'en débarrasser. Einziges Zugeständnis an die moderne Kommunikation : ein Instagram-Kanal.
