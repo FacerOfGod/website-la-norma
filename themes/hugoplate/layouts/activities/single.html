@@ -1,13 +1,13 @@
 {{ define "main" }}
   {{ with .Params.activity }}
-    <section class="relative overflow-hidden pt-14 h-screen flex items-center justify-center">
+    <section class="relative overflow-hidden pt-14 h-screen flex items-center justify-center pointer-events-none">
       <!-- Background Video -->
       <video
         autoplay
         muted
         loop
         playsinline
-        class="absolute top-0 left-0 w-full h-full object-cover -z-10 transition-opacity duration-1000">
+        class="absolute top-0 left-0 w-full h-full object-cover -z-10">
         <source src="{{ "videos/norma-loops-bg.mp4" | relURL }}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -19,23 +19,23 @@
       <div class="container relative -z-5 animate-fade-in">
         <div class="row justify-center">
           <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <div class="border-[4px] border-[#8b5e3c] text-black rounded-4xl p-8.5 shadow-2xl backdrop-blur-lg bg-white/10 transition-all duration-500 hover:shadow-3xl hover:scale-105 hover:bg-white/15">
+            <div class=" text-black  p-8.5 transition-all duration-500 ">
               <div class="col-12 mb-6 animate-slide-up">
                 {{ $logoStr := .logo }}
                 {{ $logo := printf "%s" (substr $logoStr 1) }}
-                {{ partial "image" (dict "Src" $logo "Alt" "Logo" "Loading" "eager" "Class" "mx-auto lg:w-[300px] transition-transform duration-300 hover:scale-110" "DisplayXL" "500x") }}
+                {{ partial "image" (dict "Src" $logo "Alt" "Logo" "Loading" "eager" "Class" "mx-auto lg:w-[300px] transition-transform duration-300" "DisplayXL" "500x") }}
               </div>
 
               {{ with .button }}
                 {{ if .enable }}
                   <div class="animate-slide-up-delayed">
                     <a
-                      class="btn btn-primary transform transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+                      class="btn btn-primary transform transition-all duration-300 active:scale-95"
                       href="{{ .link | absURL }}"
                       {{ if strings.HasPrefix .link "http" }}
                         target="_blank" rel="noopener"
                       {{ end }}>
-                      {{ .label }} <i class="fa fa-arrow-right pl-2 transition-transform duration-200 group-hover:translate-x-1"></i>
+                      {{ .label }} <i class="fa fa-arrow-right pl-2 transition-transform duration-200 "></i>
                     </a>
                   </div>
                 {{ end }}

@@ -11,7 +11,7 @@
     {{ $pageTranslations.Set .Language.Lang .Permalink }}
   {{ end }}
 
-  <div class="lang-dropdown mr-4"  tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+  <div class="lang-dropdown mr-4" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
     {{ with site.Language }}
       <button class="lang-dropdown-btn" aria-label="Select language">
         <img class="lang-dropdown-img" src="{{ .Params.flag | relURL }}" alt="{{ .LanguageName }} flag" />
@@ -19,13 +19,346 @@
     {{ end }}
 
     <div class="lang-dropdown-list" role="listbox">
+      {{ $index := 0 }}
       {{ range site.Languages }}
         {{ if and (ne .Lang $pageLang) ($pageTranslations.Get .Lang) }}
-          <a href="{{ $pageTranslations.Get .Lang }}" role="option" aria-selected="false" title="{{ .LanguageName }}" class="lang-dropdown-item">
+          <a href="{{ $pageTranslations.Get .Lang }}" 
+             role="option" 
+             aria-selected="false" 
+             title="{{ .LanguageName }}" 
+             class="lang-dropdown-item"
+             data-index="{{ $index }}">
             <img src="{{ .Params.flag | relURL }}" alt="{{ .LanguageName }} flag" width="32" height="22" />
+            <span class="lang-name">{{ .LanguageName }}</span>
           </a>
+          {{ $index = add $index 1 }}
         {{ end }}
       {{ end }}
     </div>
   </div>
+
+  <style>
+    .lang-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Add invisible bridge to prevent dropdown from closing */
+    .lang-dropdown::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: transparent;
+      z-index: 9998;
+    }
+
+    .lang-dropdown-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .lang-dropdown-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transform: scale(1.05);
+    }
+
+    .lang-dropdown-img {
+      width: 32px;
+      height: 22px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .lang-dropdown-list {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+      min-width: 150px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      margin-top: 2px;
+    }
+
+    /* Prevent dropdown from going off-screen */
+    .lang-dropdown-list.position-left {
+      right: auto;
+      left: 0;
+    }
+
+    .lang-dropdown-list.position-center {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+    }
+
+    .lang-dropdown-list.position-center.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .lang-dropdown:hover .lang-dropdown-list,
+    .lang-dropdown:focus-within .lang-dropdown-list,
+    .lang-dropdown-list:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-list:not(.position-center),
+    .lang-dropdown:focus-within .lang-dropdown-list:not(.position-center),
+    .lang-dropdown-list:hover:not(.position-center) {
+      transform: translateY(0);
+    }
+
+    .lang-dropdown:hover .lang-dropdown-list.position-center,
+    .lang-dropdown:focus-within .lang-dropdown-list.position-center,
+    .lang-dropdown-list.position-center:hover {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .lang-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(-10px);
+      color: #374151;
+    }
+
+    .lang-dropdown-item:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .lang-name {
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .lang-dropdown-item img {
+      width: 32px;
+      height: 22px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .lang-dropdown-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Animation for flags appearing one by one */
+    .lang-dropdown:hover .lang-dropdown-item,
+    .lang-dropdown:focus-within .lang-dropdown-item {
+      animation: slideInFlag 0.4s ease-out forwards;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-item[data-index="0"],
+    .lang-dropdown:focus-within .lang-dropdown-item[data-index="0"] {
+      animation-delay: 0.1s;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-item[data-index="1"],
+    .lang-dropdown:focus-within .lang-dropdown-item[data-index="1"] {
+      animation-delay: 0.2s;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-item[data-index="2"],
+    .lang-dropdown:focus-within .lang-dropdown-item[data-index="2"] {
+      animation-delay: 0.3s;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-item[data-index="3"],
+    .lang-dropdown:focus-within .lang-dropdown-item[data-index="3"] {
+      animation-delay: 0.4s;
+    }
+
+    .lang-dropdown:hover .lang-dropdown-item[data-index="4"],
+    .lang-dropdown:focus-within .lang-dropdown-item[data-index="4"] {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideInFlag {
+      from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      .lang-dropdown-list {
+        background: #1f2937;
+        border-color: #374151;
+      }
+
+      .lang-dropdown-btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .lang-dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .lang-name {
+        color: #e5e7eb;
+      }
+    }
+
+    /* Accessibility - reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .lang-dropdown-btn,
+      .lang-dropdown-list,
+      .lang-dropdown-item,
+      .lang-dropdown-img {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 640px) {
+      .lang-dropdown-list {
+        min-width: 120px;
+        left: auto;
+        right: 0;
+      }
+
+      .lang-dropdown-list.position-left {
+        left: 0;
+        right: auto;
+      }
+
+      .lang-dropdown-list.position-center {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const langDropdowns = document.querySelectorAll('.lang-dropdown');
+      
+      langDropdowns.forEach(dropdown => {
+        const dropdownList = dropdown.querySelector('.lang-dropdown-list');
+        
+        // Function to check and adjust dropdown position
+        function adjustDropdownPosition() {
+          const rect = dropdown.getBoundingClientRect();
+          const dropdownRect = dropdownList.getBoundingClientRect();
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = window.innerHeight;
+          
+          // Reset classes
+          dropdownList.classList.remove('position-left', 'position-center');
+          
+          // Check if dropdown goes off the right edge
+          if (rect.right - dropdownRect.width < 0) {
+            dropdownList.classList.add('position-left');
+          }
+          // Check if dropdown goes off the left edge when positioned right
+          else if (rect.right + dropdownRect.width > viewportWidth) {
+            if (rect.left + (dropdownRect.width / 2) > 0 && rect.right - (dropdownRect.width / 2) < viewportWidth) {
+              dropdownList.classList.add('position-center');
+            } else {
+              dropdownList.classList.add('position-left');
+            }
+          }
+          
+          // Check if dropdown goes off the bottom edge
+          if (rect.bottom + dropdownRect.height > viewportHeight) {
+            dropdownList.style.top = 'auto';
+            dropdownList.style.bottom = '100%';
+            dropdownList.style.marginTop = '0';
+            dropdownList.style.marginBottom = '2px';
+          } else {
+            dropdownList.style.top = '100%';
+            dropdownList.style.bottom = 'auto';
+            dropdownList.style.marginTop = '2px';
+            dropdownList.style.marginBottom = '0';
+          }
+        }
+        
+        // Adjust position on hover/focus
+        dropdown.addEventListener('mouseenter', adjustDropdownPosition);
+        dropdown.addEventListener('focusin', adjustDropdownPosition);
+        
+        // Adjust on window resize
+        window.addEventListener('resize', adjustDropdownPosition);
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.blur();
+          }
+        });
+
+        // Keyboard navigation
+        dropdown.addEventListener('keydown', (e) => {
+          const items = dropdown.querySelectorAll('.lang-dropdown-item');
+          
+          switch(e.key) {
+            case 'Enter':
+            case ' ':
+              e.preventDefault();
+              dropdown.focus();
+              adjustDropdownPosition();
+              break;
+            case 'ArrowDown':
+              e.preventDefault();
+              if (items.length > 0) {
+                items[0].focus();
+              }
+              break;
+            case 'Escape':
+              dropdown.blur();
+              break;
+          }
+        });
+
+        // Navigate between dropdown items
+        dropdown.querySelectorAll('.lang-dropdown-item').forEach((item, index, items) => {
+          item.addEventListener('keydown', (e) => {
+            switch(e.key) {
+              case 'ArrowDown':
+                e.preventDefault();
+                const nextIndex = (index + 1) % items.length;
+                items[nextIndex].focus();
+                break;
+              case 'ArrowUp':
+                e.preventDefault();
+                const prevIndex = index === 0 ? items.length - 1 : index - 1;
+                items[prevIndex].focus();
+                break;
+              case 'Escape':
+                dropdown.blur();
+                break;
+            }
+          });
+        });
+      });
+    });
+  </script>
 {{ end }}

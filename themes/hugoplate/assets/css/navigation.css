@@ -1,5 +1,5 @@
 .header {
-  @apply bg-body  py-6;
+  @apply bg-body  py-2;
 }
 
 /* navbar items */
